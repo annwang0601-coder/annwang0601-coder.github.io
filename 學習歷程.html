@@ -27,586 +27,183 @@
   --purple:#5a3d7a;
 }
 
-body{
-  font-family:'Noto Sans TC',sans-serif;
-  background:var(--cream);
-  color:var(--ink);
-  font-size:15px;
-  line-height:1.8;
-}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--ink);font-size:15px;line-height:1.8;}
 
-/* ─── HEADER ─── */
-header{
-  background:var(--navy);
-  color:white;
-  padding:0;
-  position:relative;
-  overflow:hidden;
-}
-.header-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(42,125,107,0.08) 0%, transparent 50%);
-}
-.header-inner{
-  position:relative;z-index:1;
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:center;
-  max-width:1100px;
-  margin:0 auto;
-  padding:60px 60px 60px 60px;
-  gap:40px;
-}
-.header-text h1{
-  font-family:'Noto Serif TC',serif;
-  font-size:52px;
-  font-weight:700;
-  letter-spacing:0.08em;
-  line-height:1.1;
-  margin-bottom:6px;
-}
-.header-text .subtitle{
-  font-size:14px;
-  letter-spacing:0.2em;
-  color:var(--gold2);
-  font-weight:300;
-  margin-bottom:24px;
-  text-transform:uppercase;
-}
-.header-text .tagline{
-  font-size:15px;
-  color:rgba(255,255,255,0.75);
-  line-height:2;
-  max-width:500px;
-}
-.header-badges{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  text-align:right;
-}
-.badge{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(201,168,76,0.3);
-  border-radius:4px;
-  padding:8px 16px;
-  font-size:12px;
-  color:var(--gold2);
-  letter-spacing:0.1em;
-  white-space:nowrap;
-}
-.gold-line{
-  height:2px;
-  background:linear-gradient(90deg,var(--gold),transparent);
-  margin:0;
-}
+/* HEADER */
+header{background:var(--navy);color:white;padding:0;position:relative;overflow:hidden;}
+.header-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(201,168,76,.12) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(42,125,107,.08) 0%,transparent 50%);}
+.header-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;align-items:center;max-width:1100px;margin:0 auto;padding:60px;gap:40px;}
+.header-text h1{font-family:'Noto Serif TC',serif;font-size:52px;font-weight:700;letter-spacing:.08em;line-height:1.1;margin-bottom:6px;}
+.header-text .subtitle{font-size:14px;letter-spacing:.2em;color:var(--gold2);font-weight:300;margin-bottom:24px;text-transform:uppercase;}
+.header-text .tagline{font-size:15px;color:rgba(255,255,255,.75);line-height:2;max-width:500px;}
+.header-badges{display:flex;flex-direction:column;gap:10px;text-align:right;}
+.badge{background:rgba(255,255,255,.08);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:8px 16px;font-size:12px;color:var(--gold2);letter-spacing:.1em;white-space:nowrap;}
+.gold-line{height:2px;background:linear-gradient(90deg,var(--gold),transparent);}
 
-/* ─── NAV ─── */
-nav{
-  background:var(--navy2);
-  position:sticky;top:0;z-index:100;
-  border-bottom:1px solid rgba(201,168,76,0.2);
-}
-.nav-inner{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 40px;
-  display:flex;
-  gap:0;
-  overflow-x:auto;
-  scrollbar-width:none;
-}
+/* NAV */
+nav{background:var(--navy2);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,168,76,.2);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
 .nav-inner::-webkit-scrollbar{display:none;}
-nav button{
-  background:none;border:none;
-  color:rgba(255,255,255,0.6);
-  font-family:'Noto Sans TC',sans-serif;
-  font-size:13px;
-  padding:16px 20px;
-  cursor:pointer;
-  letter-spacing:0.05em;
-  border-bottom:2px solid transparent;
-  transition:all 0.2s;
-  white-space:nowrap;
-}
+nav button{background:none;border:none;color:rgba(255,255,255,.6);font-family:'Noto Sans TC',sans-serif;font-size:13px;padding:16px 20px;cursor:pointer;letter-spacing:.05em;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;}
 nav button:hover{color:var(--gold2);}
-nav button.active-nav{
-  color:var(--gold);
-  border-bottom-color:var(--gold);
-}
+nav button.active-nav{color:var(--gold);border-bottom-color:var(--gold);}
 
-/* ─── SECTIONS ─── */
-.section{display:none; animation:fadeIn 0.4s ease;}
+/* SECTIONS */
+.section{display:none;animation:fadeIn .4s ease;}
 .section.active{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.section-inner{
-  max-width:1100px;
-  margin:0 auto;
-  padding:60px 60px;
-}
+.section-inner{max-width:1100px;margin:0 auto;padding:60px;}
 
-/* ─── PAGE TITLE ─── */
-.page-title{
-  font-family:'Noto Serif TC',serif;
-  font-size:28px;
-  font-weight:700;
-  color:var(--navy);
-  margin-bottom:8px;
-  padding-bottom:16px;
-  border-bottom:2px solid var(--gold);
-  display:inline-block;
-}
-.page-desc{
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:40px;
-  margin-top:8px;
-}
+/* PAGE TITLE */
+.page-title{font-family:'Noto Serif TC',serif;font-size:28px;font-weight:700;color:var(--navy);margin-bottom:8px;padding-bottom:16px;border-bottom:2px solid var(--gold);display:inline-block;}
+.page-desc{color:var(--muted);font-size:14px;margin-bottom:40px;margin-top:8px;}
 
-/* ─── CARDS ─── */
-.card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:32px 36px;
-  margin-bottom:24px;
-}
-.card-title{
-  font-family:'Noto Serif TC',serif;
-  font-size:17px;
-  font-weight:600;
-  color:var(--navy);
-  margin-bottom:16px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.card-title::before{
-  content:'';
-  display:inline-block;
-  width:4px;height:18px;
-  background:var(--gold);
-  border-radius:2px;
-  flex-shrink:0;
-}
+/* CARDS */
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:32px 36px;margin-bottom:24px;}
+.card-title{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.card-title::before{content:'';display:inline-block;width:4px;height:18px;background:var(--gold);border-radius:2px;flex-shrink:0;}
 
-/* ─── ABOUT ─── */
-.profile-grid{
-  display:grid;
-  grid-template-columns:1fr 340px;
-  gap:32px;
-  margin-bottom:40px;
-}
-.profile-intro{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:36px;
-  font-size:15px;
-  line-height:2;
-  color:var(--ink);
-}
+/* ABOUT */
+.profile-grid{display:grid;grid-template-columns:1fr 340px;gap:32px;margin-bottom:40px;}
+.profile-intro{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:36px;font-size:15px;line-height:2;color:var(--ink);}
 .profile-intro p{margin-bottom:12px;}
 .profile-intro p:last-child{margin-bottom:0;}
-.profile-side{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-.side-block{
-  background:var(--navy);
-  border-radius:8px;
-  padding:24px;
-  color:white;
-}
-.side-block h4{
-  font-size:11px;
-  letter-spacing:0.2em;
-  color:var(--gold2);
-  text-transform:uppercase;
-  margin-bottom:14px;
-}
-.side-item{
-  font-size:13px;
-  color:rgba(255,255,255,0.8);
-  padding:6px 0;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  line-height:1.6;
-}
+.profile-side{display:flex;flex-direction:column;gap:16px;}
+.side-block{background:var(--navy);border-radius:8px;padding:24px;color:white;}
+.side-block h4{font-size:11px;letter-spacing:.2em;color:var(--gold2);text-transform:uppercase;margin-bottom:14px;}
+.side-item{font-size:13px;color:rgba(255,255,255,.8);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);line-height:1.6;}
 .side-item:last-child{border-bottom:none;}
 .side-item strong{color:var(--gold2);font-weight:500;}
 
-/* ─── TIMELINE ─── */
+/* TIMELINE */
 .timeline-section{margin-top:40px;}
-.timeline-title{
-  font-family:'Noto Serif TC',serif;
-  font-size:20px;color:var(--navy);
-  margin-bottom:24px;font-weight:700;
-}
-.timeline{
-  position:relative;
-  padding-left:40px;
-}
-.timeline::before{
-  content:'';
-  position:absolute;left:8px;top:0;bottom:0;
-  width:1px;background:var(--gold);opacity:0.4;
-}
-.tl-item{
-  position:relative;
-  margin-bottom:24px;
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:6px;
-  padding:16px 20px;
-}
-.tl-item::before{
-  content:'';
-  position:absolute;left:-36px;top:50%;transform:translateY(-50%);
-  width:8px;height:8px;border-radius:50%;
-  background:var(--gold);
-  border:2px solid var(--cream);
-}
-.tl-year{
-  font-size:11px;letter-spacing:0.15em;
-  color:var(--gold);font-weight:500;
-  margin-bottom:4px;
-  text-transform:uppercase;
-}
-.tl-text{
-  font-size:14px;color:var(--ink);
-}
+.timeline-title{font-family:'Noto Serif TC',serif;font-size:20px;color:var(--navy);margin-bottom:24px;font-weight:700;}
+.timeline{position:relative;padding-left:40px;}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:1px;background:var(--gold);opacity:.4;}
+.tl-item{position:relative;margin-bottom:24px;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:16px 20px;}
+.tl-item::before{content:'';position:absolute;left:-36px;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:var(--gold);border:2px solid var(--cream);}
+.tl-year{font-size:11px;letter-spacing:.15em;color:var(--gold);font-weight:500;margin-bottom:4px;text-transform:uppercase;}
+.tl-text{font-size:14px;color:var(--ink);}
 
-/* ─── LEARNING ─── */
-.learning-tabs{
-  display:flex;gap:0;
-  border-bottom:1px solid var(--border);
-  margin-bottom:32px;
-}
-.ltab{
-  background:none;border:none;
-  font-family:'Noto Sans TC',sans-serif;
-  font-size:13px;color:var(--muted);
-  padding:12px 20px;cursor:pointer;
-  border-bottom:2px solid transparent;
-  margin-bottom:-1px;
-  transition:all 0.2s;
-}
+/* LEARNING TABS */
+.learning-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:32px;flex-wrap:wrap;}
+.ltab{background:none;border:none;font-family:'Noto Sans TC',sans-serif;font-size:13px;color:var(--muted);padding:12px 20px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;}
 .ltab.active{color:var(--navy);border-bottom-color:var(--navy);font-weight:500;}
 .ltab:hover{color:var(--navy);}
 .ltab-content{display:none;}
 .ltab-content.active{display:block;}
 
-.numbered-list{
-  counter-reset:item;
-  list-style:none;
-  padding:0;
-}
-.numbered-list li{
-  counter-increment:item;
-  display:flex;gap:16px;
-  margin-bottom:20px;
-  align-items:flex-start;
-}
-.numbered-list li::before{
-  content:counter(item,'（一二三四五六七八九十');
-  content:counter(item);
-  display:inline-flex;
-  align-items:center;justify-content:center;
-  width:28px;height:28px;
-  background:var(--navy);color:white;
-  border-radius:50%;
-  font-size:12px;font-weight:500;
-  flex-shrink:0;margin-top:2px;
-}
-.nl-label{
-  font-weight:500;color:var(--navy);margin-bottom:4px;font-size:14px;
-}
-.nl-body{font-size:14px;color:var(--ink);line-height:1.9;}
-
-.thought-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-.thought-card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:24px;
-  border-top:3px solid var(--navy);
-}
+.thought-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.thought-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px;border-top:3px solid var(--navy);}
 .thought-card.gold{border-top-color:var(--gold);}
 .thought-card.teal{border-top-color:var(--teal);}
 .thought-card.rust{border-top-color:var(--rust);}
-.thought-h{
-  font-weight:500;font-size:14px;
-  color:var(--navy);margin-bottom:12px;
-}
+.thought-h{font-weight:500;font-size:14px;color:var(--navy);margin-bottom:12px;}
 .thought-body{font-size:13px;color:var(--ink);line-height:1.9;}
 
-.challenge-item{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:16px 0;
-  border-bottom:1px solid var(--pale);
-}
+.challenge-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--pale);}
 .challenge-item:last-child{border-bottom:none;}
-.ch-icon{
-  width:32px;height:32px;border-radius:6px;
-  background:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-  font-size:14px;color:var(--gold2);font-weight:500;
-}
+.ch-icon{width:32px;height:32px;border-radius:6px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:var(--gold2);font-weight:500;}
 .ch-label{font-weight:500;font-size:14px;color:var(--navy);margin-bottom:4px;}
 .ch-body{font-size:13px;color:var(--ink);}
 
-/* ─── CAMP ─── */
-.camp-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-}
-.camp-card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:24px 28px;
-  border-left:4px solid var(--navy);
-}
+/* CAMP */
+.camp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.camp-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 28px;border-left:4px solid var(--navy);}
 .camp-card.c2{border-left-color:var(--teal);}
 .camp-card.c3{border-left-color:var(--rust);}
 .camp-card.c4{border-left-color:var(--gold);}
 .camp-card.c5{border-left-color:var(--purple);}
-.camp-name{
-  font-weight:500;font-size:15px;color:var(--navy);margin-bottom:12px;
-}
+.camp-name{font-weight:500;font-size:15px;color:var(--navy);margin-bottom:12px;}
 .camp-items{list-style:none;padding:0;}
-.camp-items li{
-  font-size:13px;color:var(--ink);
-  padding:5px 0;
-  border-bottom:1px solid var(--pale);
-  display:flex;gap:8px;align-items:flex-start;
-  line-height:1.7;
-}
+.camp-items li{font-size:13px;color:var(--ink);padding:5px 0;border-bottom:1px solid var(--pale);display:flex;gap:8px;align-items:flex-start;line-height:1.7;}
 .camp-items li:last-child{border-bottom:none;}
 .camp-items li::before{content:'▸';color:var(--gold);font-size:10px;margin-top:4px;flex-shrink:0;}
 
-/* ─── AWARDS ─── */
-.award-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-bottom:32px;
-}
-.award-block{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  overflow:hidden;
-}
-.award-header{
-  background:var(--navy);
-  color:white;
-  padding:16px 20px;
-  font-size:13px;font-weight:500;
-  letter-spacing:0.05em;
-}
+/* AWARDS */
+.award-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px;}
+.award-block{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.award-header{background:var(--navy);color:white;padding:16px 20px;font-size:13px;font-weight:500;letter-spacing:.05em;}
 .award-header.gold{background:#7a5c1e;}
 .award-header.teal{background:var(--teal);}
-.award-item{
-  padding:12px 20px;
-  border-bottom:1px solid var(--pale);
-  font-size:13px;
-  display:flex;gap:12px;align-items:center;
-}
+.award-item{padding:12px 20px;border-bottom:1px solid var(--pale);font-size:13px;display:flex;gap:12px;align-items:center;}
 .award-item:last-child{border-bottom:none;}
-.award-rank{
-  font-size:10px;font-weight:500;
-  color:var(--gold);letter-spacing:0.05em;
-  white-space:nowrap;flex-shrink:0;
-}
+.award-rank{font-size:10px;font-weight:500;color:var(--gold);letter-spacing:.05em;white-space:nowrap;flex-shrink:0;}
 
-/* ─── TCM NOTES ─── */
-.tcm-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:16px;
-  margin-bottom:32px;
-}
-.tcm-note{
-  border-radius:8px;
-  padding:18px 22px;
-  color:white;
-  font-size:14px;
-  line-height:1.9;
-}
-.tcm-note strong{
-  display:block;font-size:12px;letter-spacing:0.12em;
-  opacity:0.8;margin-bottom:6px;text-transform:uppercase;
-}
-.n-blood{background:#7a2828;}
-.n-qi{background:#a05020;}
-.n-heat{background:#8a2060;}
-.n-cold{background:#1e4a7a;}
-.n-organ{background:var(--teal);}
-.n-meridian{background:#1a4a6a;}
-.n-drug{background:#4a3060;}
-.n-herb{background:#3a5020;}
+/* TCM */
+.tcm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:32px;}
+.tcm-note{border-radius:8px;padding:18px 22px;color:white;font-size:14px;line-height:1.9;}
+.tcm-note strong{display:block;font-size:12px;letter-spacing:.12em;opacity:.8;margin-bottom:6px;text-transform:uppercase;}
+.n-blood{background:#7a2828;}.n-qi{background:#a05020;}.n-heat{background:#8a2060;}.n-cold{background:#1e4a7a;}.n-organ{background:var(--teal);}.n-meridian{background:#1a4a6a;}.n-drug{background:#4a3060;}.n-herb{background:#3a5020;}
 
-.wuxing-wrap{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:36px;
-  margin-bottom:24px;
-}
-.wuxing-title{
-  font-family:'Noto Serif TC',serif;
-  font-size:16px;font-weight:600;color:var(--navy);
-  margin-bottom:24px;
-  text-align:center;
-}
-.wuxing{
-  display:flex;justify-content:center;
-  gap:20px;flex-wrap:wrap;
-  margin-bottom:20px;
-}
-.element{
-  width:64px;height:64px;
-  border-radius:50%;
-  color:white;font-weight:500;
-  cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;
-  font-family:'Noto Serif TC',serif;
-  transition:transform 0.2s,box-shadow 0.2s;
-  border:2px solid transparent;
-}
+.wuxing-wrap{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:36px;margin-bottom:24px;}
+.wuxing-title{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:24px;text-align:center;}
+.wuxing{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px;}
+.element{width:64px;height:64px;border-radius:50%;color:white;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;font-family:'Noto Serif TC',serif;transition:transform .2s,box-shadow .2s;border:2px solid transparent;}
 .element:hover{transform:scale(1.08);}
-.element.selected{border-color:white;box-shadow:0 0 0 3px rgba(0,0,0,0.2);}
-.ew{background:#2a7d6b;}
-.ef{background:#9b3a3a;}
-.ee{background:#8a7020;color:white;}
-.em{background:#606060;}
-.ewa{background:#1e4a7a;}
-.element-info{
-  text-align:center;padding:16px;
-  font-size:14px;color:var(--navy);
-  min-height:48px;
-  background:var(--pale);
-  border-radius:6px;
-  line-height:1.8;
-}
+.element.selected{border-color:white;box-shadow:0 0 0 3px rgba(0,0,0,.2);}
+.ew{background:#2a7d6b;}.ef{background:#9b3a3a;}.ee{background:#8a7020;}.em{background:#606060;}.ewa{background:#1e4a7a;}
+.element-info{text-align:center;padding:16px;font-size:14px;color:var(--navy);min-height:48px;background:var(--pale);border-radius:6px;line-height:1.8;}
 
-/* ─── CLUB ─── */
-.club-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-.club-card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  overflow:hidden;
-}
-.club-head{
-  background:var(--navy);
-  color:white;
-  padding:16px 24px;
-  font-size:14px;font-weight:500;
-  letter-spacing:0.06em;
-}
-.club-item{
-  padding:12px 24px;
-  border-bottom:1px solid var(--pale);
-  font-size:13px;
-  display:flex;align-items:center;gap:10px;
-}
+/* CLUB */
+.club-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.club-card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.club-head{background:var(--navy);color:white;padding:16px 24px;font-size:14px;font-weight:500;letter-spacing:.06em;}
+.club-item{padding:12px 24px;border-bottom:1px solid var(--pale);font-size:13px;display:flex;align-items:center;gap:10px;}
 .club-item:last-child{border-bottom:none;}
-.club-tag{
-  font-size:10px;padding:2px 8px;
-  border-radius:20px;
-  background:var(--pale);color:var(--navy);
-  font-weight:500;letter-spacing:0.05em;
-  white-space:nowrap;
-}
+.club-tag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--pale);color:var(--navy);font-weight:500;letter-spacing:.05em;white-space:nowrap;}
 
-/* ─── SERVICE ─── */
+/* SERVICE */
 .service-list{list-style:none;padding:0;}
-.service-item{
-  display:flex;gap:20px;
-  padding:20px 0;
-  border-bottom:1px solid var(--pale);
-  align-items:flex-start;
-}
+.service-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--pale);align-items:flex-start;}
 .service-item:last-child{border-bottom:none;}
-.sv-icon{
-  width:44px;height:44px;border-radius:8px;
-  background:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:18px;
-}
+.sv-icon{width:44px;height:44px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
 .sv-name{font-weight:500;font-size:15px;color:var(--navy);margin-bottom:6px;}
 .sv-desc{font-size:13px;color:var(--muted);line-height:1.8;}
 
-/* ─── EXHIBIT ─── */
-.exhibit-steps{
-  position:relative;
-  padding-left:32px;
-}
-.exhibit-steps::before{
-  content:'';position:absolute;left:7px;top:8px;bottom:8px;
-  width:1px;background:var(--gold);opacity:0.5;
-}
-.ex-step{
-  position:relative;
-  margin-bottom:28px;
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:20px 24px;
-}
-.ex-step::before{
-  content:'';
-  position:absolute;left:-29px;top:24px;
-  width:10px;height:10px;border-radius:50%;
-  background:var(--gold);border:2px solid var(--cream);
-}
-.ex-label{
-  font-size:11px;letter-spacing:0.18em;
-  color:var(--gold);text-transform:uppercase;
-  font-weight:500;margin-bottom:8px;
-}
-.ex-title{
-  font-weight:500;font-size:15px;color:var(--navy);margin-bottom:10px;
-}
+/* EXHIBIT */
+.exhibit-steps{position:relative;padding-left:32px;}
+.exhibit-steps::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--gold);opacity:.5;}
+.ex-step{position:relative;margin-bottom:28px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px 24px;}
+.ex-step::before{content:'';position:absolute;left:-29px;top:24px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--cream);}
+.ex-label{font-size:11px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:8px;}
+.ex-title{font-weight:500;font-size:15px;color:var(--navy);margin-bottom:10px;}
 .ex-body{font-size:13px;color:var(--ink);line-height:1.9;}
 
-/* ─── FOOTER ─── */
-footer{
-  background:var(--navy);
-  color:rgba(255,255,255,0.5);
-  text-align:center;
-  padding:32px;
-  font-size:12px;
-  letter-spacing:0.1em;
-  margin-top:60px;
-}
+/* Detail sections */
+.detail-section{margin-bottom:32px;}
+.detail-section h3{font-family:'Noto Serif TC',serif;font-size:18px;color:var(--navy);margin-bottom:16px;font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.detail-body{font-size:14px;color:var(--ink);line-height:2;}
+.detail-body p{margin-bottom:12px;}
+.role-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.role-tag{background:var(--navy);color:var(--gold2);font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:.08em;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-block{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px 24px;}
+.info-block h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:12px;letter-spacing:.05em;}
+.info-block ul{list-style:none;padding:0;}
+.info-block ul li{font-size:13px;color:var(--ink);padding:5px 0;border-bottom:1px solid var(--pale);display:flex;gap:8px;line-height:1.7;}
+.info-block ul li:last-child{border-bottom:none;}
+.info-block ul li::before{content:'▸';color:var(--gold);font-size:10px;margin-top:4px;flex-shrink:0;}
+
+.vsepr-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:16px;}
+.vsepr-table th{background:var(--navy);color:white;padding:10px 14px;text-align:left;font-weight:500;}
+.vsepr-table td{padding:9px 14px;border-bottom:1px solid var(--pale);color:var(--ink);}
+.vsepr-table tr:last-child td{border-bottom:none;}
+.vsepr-table tr:nth-child(even) td{background:rgba(0,0,0,.02);}
+
+.quote-block{background:var(--pale);border-left:4px solid var(--gold);padding:16px 20px;border-radius:0 6px 6px 0;margin:16px 0;font-size:14px;color:var(--navy);line-height:1.9;font-style:italic;}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:32px;font-size:12px;letter-spacing:.1em;margin-top:60px;}
 footer span{color:var(--gold2);}
 
-/* ─── RESPONSIVE ─── */
 @media(max-width:768px){
   .header-inner{grid-template-columns:1fr;padding:40px 24px;}
   .header-badges{display:none;}
   .section-inner{padding:40px 24px;}
-  .profile-grid{grid-template-columns:1fr;}
+  .profile-grid,.two-col,.thought-grid,.club-grid{grid-template-columns:1fr;}
   .award-grid{grid-template-columns:1fr;}
-  .thought-grid{grid-template-columns:1fr;}
-  .club-grid{grid-template-columns:1fr;}
   nav button{padding:14px 14px;font-size:12px;}
   .nav-inner{padding:0 16px;}
 }
@@ -668,11 +265,11 @@ footer span{color:var(--gold2);}
       <div class="side-block">
         <h4>語言能力</h4>
         <div class="side-item"><strong>TOEIC</strong> 880 分</div>
-        <div class="side-item"><strong>全民英檢</strong> 中高級</div>
+        <div class="side-item"><strong>全民英檢</strong> 中高級初試通過</div>
       </div>
       <div class="side-block">
         <h4>音樂</h4>
-        <div class="side-item"><strong>大提琴</strong> 台北市獨奏 第二名</div>
+        <div class="side-item"><strong>大提琴</strong> 台北市北區獨奏 第二名</div>
         <div class="side-item"><strong>藝享盃</strong> 第三名</div>
         <div class="side-item"><strong>桃花源盃</strong> 第二名</div>
       </div>
@@ -683,16 +280,16 @@ footer span{color:var(--gold2);}
     <div class="timeline-title">高中歷程時間軸</div>
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-year">2023</div>
-        <div class="tl-text">化學奧林匹亞初選 榮譽獎・開始系統性學習中醫基礎理論・台大醫院志工</div>
+        <div class="tl-year">高一</div>
+        <div class="tl-text">化學奧林匹亞初選 榮譽獎・開始系統性學習中醫基礎理論・台大醫院志工・生物小老師・合唱團聖誕快閃演出・服裝組（英語話劇）・白沙灣淨灘</div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2024</div>
-        <div class="tl-text">AMC12 全國前 3%・TRML 團體優良獎・台北市大提琴獨奏 第二名・長庚中西醫體驗營・北醫醫學營・陽明交通大學生醫科技課程</div>
+        <div class="tl-year">高二</div>
+        <div class="tl-text">AMC12 全國前 3%・TRML 台北地區團體優良獎・台北市北區大提琴獨奏 第二名・長庚中西醫體驗營・北醫醫學營・陽明交通大學生醫科技課程・英語話劇 最佳劇本獎・副學藝股長・數學小老師</div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">持續進行中</div>
-        <div class="tl-text">針灸手法自主練習・中藥升降浮沉理論研究・大體解剖觀摩・成果發表策劃與執行</div>
+        <div class="tl-year">高三</div>
+        <div class="tl-text">副資訊股長・針灸手法自主練習・中藥升降浮沉理論研究・大體解剖觀摩・成果發表策劃與執行</div>
       </div>
     </div>
   </div>
@@ -715,52 +312,36 @@ footer span{color:var(--gold2);}
     <button class="ltab" onclick="showTab('t7',this)">醫學體驗</button>
   </div>
 
-  <!-- Tab 1: 中醫基礎理論 -->
+  <!-- Tab 1 -->
   <div class="ltab-content active" id="t1">
     <div class="card">
       <div class="card-title">學習動機</div>
-      <ol class="numbered-list" style="list-style:none;padding:0;counter-reset:num;">
-        <li style="counter-increment:num;display:flex;gap:16px;margin-bottom:20px;">
-          <div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px;">一</div>
-          <div><div class="nl-label">文化契合感</div><div class="nl-body">對中國古代文化有濃厚興趣，發現中醫的「取象比類」與整體觀思考模式與自身思維十分切合，激發長期深入探索的動力。</div></div>
-        </li>
-        <li style="display:flex;gap:16px;margin-bottom:0;">
-          <div style="width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px;">二</div>
-          <div><div class="nl-label">自主探尋資源</div><div class="nl-body">主動尋求專業教學資源，觀看廣州中醫藥大學潘毅教授的《中醫基礎理論》線上課程，建立系統性的中醫知識架構。</div></div>
-        </li>
-      </ol>
+      <div class="challenge-item">
+        <div class="ch-icon" style="font-size:11px;">文化</div>
+        <div><div class="ch-label">文化契合感</div><div class="ch-body">對中國古代文化有濃厚興趣，發現中醫的「取象比類」與整體觀思考模式與自身思維十分切合，激發長期深入探索的動力。</div></div>
+      </div>
+      <div class="challenge-item" style="border-bottom:none;">
+        <div class="ch-icon" style="font-size:11px;">資源</div>
+        <div><div class="ch-label">自主探尋資源</div><div class="ch-body">主動尋求專業教學資源，觀看廣州中醫藥大學潘毅教授的《中醫基礎理論》線上課程，建立系統性的中醫知識架構。</div></div>
+      </div>
     </div>
     <div class="card">
       <div class="card-title">學習方式</div>
-      <ol class="numbered-list" style="list-style:none;padding:0;">
-        <li style="display:flex;gap:16px;margin-bottom:20px;">
-          <div style="width:28px;height:28px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px;">一</div>
-          <div><div class="nl-label">階段性筆記</div><div class="nl-body">經歷從傳統紙筆到 Google 文件的轉化過程，利用數位工具便利性進行資料分類與長期儲存，兼具便利性及環保。</div></div>
-        </li>
-        <li style="display:flex;gap:16px;margin-bottom:0;">
-          <div style="width:28px;height:28px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px;">二</div>
-          <div><div class="nl-label">固定學習節奏</div><div class="nl-body">高一時堅持每晚投入 45 分鐘聽課，並利用每週「自主學習時間」進行跨單元的系統化筆記統整，培養自律的學習習慣。</div></div>
-        </li>
-      </ol>
+      <div class="challenge-item">
+        <div class="ch-icon" style="font-size:11px;">筆記</div>
+        <div><div class="ch-label">階段性筆記</div><div class="ch-body">經歷從傳統紙筆到 Google 文件的轉化過程，利用數位工具便利性進行資料分類與長期儲存，兼具便利性及環保。</div></div>
+      </div>
+      <div class="challenge-item" style="border-bottom:none;">
+        <div class="ch-icon" style="font-size:11px;">節奏</div>
+        <div><div class="ch-label">固定學習節奏</div><div class="ch-body">高一時堅持每晚投入 45 分鐘聽課，並利用每週「自主學習時間」進行跨單元的系統化筆記統整，培養自律的學習習慣。</div></div>
+      </div>
     </div>
     <div class="card">
       <div class="card-title">學習困難與心得</div>
-      <div class="challenge-item">
-        <div class="ch-icon">五行</div>
-        <div><div class="ch-label">五行概念抽象</div><div class="ch-body">「土」代表中庸且陰陽相等的特性，與其他四行相比較為特殊，初次理解時難以完全掌握其調節氣機的核心功能。</div></div>
-      </div>
-      <div class="challenge-item">
-        <div class="ch-icon">相克</div>
-        <div><div class="ch-label">相克的誤解</div><div class="ch-body">「相克」字面容易讓人誤解為削弱或消滅，但實際意涵是「領導並協助」——這個概念顛覆了原本認知，讓我理解中醫思維不能以字面直譯。</div></div>
-      </div>
-      <div class="challenge-item">
-        <div class="ch-icon">絡</div>
-        <div><div class="ch-label">經絡系統困難度高</div><div class="ch-body">經絡是課程中難度最高的單元，必須先充分理解五行，才能進一步理解經絡的走向與規律，打好基礎是深入學習的關鍵。</div></div>
-      </div>
-      <div class="challenge-item" style="border-bottom:none;">
-        <div class="ch-icon">中西</div>
-        <div><div class="ch-label">中西醫思維切換</div><div class="ch-body">西醫傾向「微觀細化」，中醫強調「宏觀整體」——例如觀察到陰陽五行的二進位邏輯，與西醫 DNA 半保留複製有異曲同工之妙，兩者並非對立而是互補。</div></div>
-      </div>
+      <div class="challenge-item"><div class="ch-icon">五行</div><div><div class="ch-label">五行概念抽象</div><div class="ch-body">「土」代表中庸且陰陽相等的特性，與其他四行相比較為特殊，初次理解時難以完全掌握其調節氣機的核心功能。</div></div></div>
+      <div class="challenge-item"><div class="ch-icon">相克</div><div><div class="ch-label">相克的誤解</div><div class="ch-body">「相克」字面容易讓人誤解為削弱或消滅，但實際意涵是「領導並協助」——這個概念顛覆了原本認知，讓我理解中醫思維不能以字面直譯。</div></div></div>
+      <div class="challenge-item"><div class="ch-icon">絡</div><div><div class="ch-label">經絡系統困難度高</div><div class="ch-body">經絡是課程中難度最高的單元，必須先充分理解五行，才能進一步理解經絡的走向與規律，打好基礎是深入學習的關鍵。</div></div></div>
+      <div class="challenge-item" style="border-bottom:none;"><div class="ch-icon">中西</div><div><div class="ch-label">中西醫思維切換</div><div class="ch-body">西醫傾向「微觀細化」，中醫強調「宏觀整體」——例如觀察到陰陽五行的二進位邏輯，與西醫 DNA 半保留複製有異曲同工之妙，兩者並非對立而是互補。</div></div></div>
     </div>
     <div class="card">
       <div class="card-title">反思與未來展望</div>
@@ -768,99 +349,60 @@ footer span{color:var(--gold2);}
     </div>
   </div>
 
-  <!-- Tab 2: 跨領域哲學思考 -->
+  <!-- Tab 2 -->
   <div class="ltab-content" id="t2">
     <div class="card">
       <div class="card-title">陰陽五行之動態平衡</div>
       <div class="thought-grid">
-        <div class="thought-card">
-          <div class="thought-h">中庸與土行之關聯</div>
-          <div class="thought-body">透過《周易》中庸思想的解析，連結中醫五行中「土」的角色。體悟到土並非靜止，而是變動中的過渡，具備調節氣機、促成整體平衡的功能。</div>
-        </div>
-        <div class="thought-card gold">
-          <div class="thought-h">卦象與生理狀態的類比</div>
-          <div class="thought-body">將易經卦象視為身體動態平衡的縮影。思考不同病理狀態（陰陽失調）如何對應卦象變動，理解藥物干預本質上是引導向平衡轉化。</div>
-        </div>
+        <div class="thought-card"><div class="thought-h">中庸與土行之關聯</div><div class="thought-body">透過《周易》中庸思想的解析，連結中醫五行中「土」的角色。體悟到土並非靜止，而是變動中的過渡，具備調節氣機、促成整體平衡的功能。</div></div>
+        <div class="thought-card gold"><div class="thought-h">卦象與生理狀態的類比</div><div class="thought-body">將易經卦象視為身體動態平衡的縮影。思考不同病理狀態（陰陽失調）如何對應卦象變動，理解藥物干預本質上是引導向平衡轉化。</div></div>
       </div>
     </div>
     <div class="card">
       <div class="card-title">兵法策略與醫病關係</div>
       <div class="thought-grid">
-        <div class="thought-card teal">
-          <div class="thought-h">策略性思維運用</div>
-          <div class="thought-body">《孫子兵法》中「敗不敗在自己」的觀點，啟發我在醫療評估時，應先求「己之不可勝」（厚植正氣），再尋求對抗病灶。</div>
-        </div>
-        <div class="thought-card rust">
-          <div class="thought-h">攻心與情志療法</div>
-          <div class="thought-body">轉化兵法中的攻心技巧，思考其在中醫「情志調節」中的應用——透過理解患者心理與壓力，達到更好的衛教與治療效果。</div>
-        </div>
+        <div class="thought-card teal"><div class="thought-h">策略性思維運用</div><div class="thought-body">《孫子兵法》中「敗不敗在自己」的觀點，啟發我在醫療評估時，應先求「己之不可勝」（厚植正氣），再尋求對抗病灶。</div></div>
+        <div class="thought-card rust"><div class="thought-h">攻心與情志療法</div><div class="thought-body">轉化兵法中的攻心技巧，思考其在中醫「情志調節」中的應用——透過理解患者心理與壓力，達到更好的衛教與治療效果。</div></div>
       </div>
     </div>
     <div class="card">
       <div class="card-title">道家哲學與養生觀點</div>
       <div class="thought-grid">
-        <div class="thought-card">
-          <div class="thought-h">陰性力量的價值</div>
-          <div class="thought-body">連結老子對嬰兒與卑下的推崇，對應中醫重「陰」的思維。理解柔弱、內斂、空虛不僅是品格，更是人體保存能量、承載萬物的容器理論。</div>
-        </div>
-        <div class="thought-card gold">
-          <div class="thought-h">心境與環境的交互影響</div>
-          <div class="thought-body">在養生學中，維持低欲求、謙卑的心態，能更敏銳地感受身體細微的變化，達到守藏效果——這是道家「處卑下而後能珍惜」的醫學應用。</div>
-        </div>
+        <div class="thought-card"><div class="thought-h">陰性力量的價值</div><div class="thought-body">連結老子對嬰兒與卑下的推崇，對應中醫重「陰」的思維。理解柔弱、內斂、空虛不僅是品格，更是人體保存能量、承載萬物的容器理論。</div></div>
+        <div class="thought-card gold"><div class="thought-h">心境與環境的交互影響</div><div class="thought-body">在養生學中，維持低欲求、謙卑的心態，能更敏銳地感受身體細微的變化，達到守藏效果——這是道家「處卑下而後能珍惜」的醫學應用。</div></div>
       </div>
     </div>
     <div class="card">
       <div class="card-title">處世境界與醫道修行</div>
       <div class="thought-grid">
-        <div class="thought-card teal">
-          <div class="thought-h">從儒家規矩到魏晉真性情</div>
-          <div class="thought-body">分析儒、道、禪的思想演變，領悟中醫臨床處方應「有原則且隨機應變」。最好的治療並非死守方劑，而是具備獨立思想，針對個體獨特性進行辨證論治。</div>
-        </div>
-        <div class="thought-card">
-          <div class="thought-h">自我反思：不後悔的路</div>
-          <div class="thought-body">如同中醫沒有絕對完美的體質，只有當下的平衡。透過學習不同哲學思想，在儒家的責任、道家的退守、兵法的進取中，根據當下環境做出最適合的權衡。</div>
-        </div>
+        <div class="thought-card teal"><div class="thought-h">從儒家規矩到魏晉真性情</div><div class="thought-body">分析儒、道、禪的思想演變，領悟中醫臨床處方應「有原則且隨機應變」。最好的治療並非死守方劑，而是具備獨立思想，針對個體獨特性進行辨證論治。</div></div>
+        <div class="thought-card"><div class="thought-h">自我反思：不後悔的路</div><div class="thought-body">如同中醫沒有絕對完美的體質，只有當下的平衡。透過學習不同哲學思想，在儒家的責任、道家的退守、兵法的進取中，根據當下環境做出最適合的權衡。</div></div>
       </div>
     </div>
   </div>
 
-  <!-- Tab 3: 藥膳實作 -->
+  <!-- Tab 3 -->
   <div class="ltab-content" id="t3">
     <div class="card">
       <div class="card-title">學習過程</div>
-      <p style="font-size:14px;line-height:2;margin-bottom:16px;">初步對首烏布朗尼最感興趣，其結合熟地、黃精與枸杞，具滋補腎陰功效，是心目中最理想的藥膳點心選擇。考量自身烹飪基礎，判斷布朗尼製作工序較繁瑣，轉而選擇較易上手的季節炊飯，找到最適合自己發揮的位置。實作結束後落實環境整理，養成料理善後的良好習慣。</p>
+      <p style="font-size:14px;line-height:2;">初步對首烏布朗尼最感興趣，其結合熟地、黃精與枸杞，具滋補腎陰功效，是心目中最理想的藥膳點心選擇。考量自身烹飪基礎，判斷布朗尼製作工序較繁瑣，轉而選擇較易上手的季節炊飯，找到最適合自己發揮的位置。實作結束後落實環境整理，養成料理善後的良好習慣。</p>
     </div>
     <div class="card">
       <div class="card-title">學習心得與反思</div>
-      <div class="challenge-item">
-        <div class="ch-icon" style="font-size:12px;">火候</div>
-        <div><div class="ch-label">火候與層次掌控</div><div class="ch-body">炊飯製作看似簡單，實際操作時食材層次的處理與火候的拿捏需要細心與經驗，是最大的挑戰。</div></div>
-      </div>
-      <div class="challenge-item">
-        <div class="ch-icon" style="font-size:12px;">藥膳</div>
-        <div><div class="ch-label">藥膳背後的中醫理論</div><div class="ch-body">藥膳不只是「加了中藥的料理」，其背後的食材搭配邏輯（如滋補腎陰的組合）蘊含完整的中醫理論，實作讓理論更加具體可感。</div></div>
-      </div>
-      <div class="challenge-item" style="border-bottom:none;">
-        <div class="ch-icon" style="font-size:12px;">反思</div>
-        <div><div class="ch-label">未來展望</div><div class="ch-body">這次藥膳實作讓我對「食療」產生更深的興趣，希望未來能進一步學習中醫飲食調養的相關知識，將理論與生活實踐結合。未來應在準備階段投入更多時間研究，做出更有挑戰性的選擇。</div></div>
-      </div>
+      <div class="challenge-item"><div class="ch-icon" style="font-size:12px;">火候</div><div><div class="ch-label">火候與層次掌控</div><div class="ch-body">炊飯製作看似簡單，實際操作時食材層次的處理與火候的拿捏需要細心與經驗，是最大的挑戰。</div></div></div>
+      <div class="challenge-item"><div class="ch-icon" style="font-size:12px;">藥膳</div><div><div class="ch-label">藥膳背後的中醫理論</div><div class="ch-body">藥膳不只是「加了中藥的料理」，其背後的食材搭配邏輯（如滋補腎陰的組合）蘊含完整的中醫理論，實作讓理論更加具體可感。</div></div></div>
+      <div class="challenge-item" style="border-bottom:none;"><div class="ch-icon" style="font-size:12px;">展望</div><div><div class="ch-label">未來展望</div><div class="ch-body">這次藥膳實作讓我對「食療」產生更深的興趣，希望未來能進一步學習中醫飲食調養的相關知識，將理論與生活實踐結合。</div></div></div>
     </div>
   </div>
 
-  <!-- Tab 4: 升降浮沉 -->
+  <!-- Tab 4 -->
   <div class="ltab-content" id="t4">
     <div class="card">
       <div class="card-title">中藥升降浮沉理論</div>
       <p style="font-size:14px;line-height:2;margin-bottom:20px;">探索中藥「升降浮沉」理論，理解藥物作用方向對人體氣機的影響。</p>
       <div class="thought-grid">
-        <div class="thought-card teal">
-          <div class="thought-h">升浮之性</div>
-          <div class="thought-body">花、葉類藥材因質輕而多具「升浮」之性，能引藥上行，作用於人體上焦，治療上焦病症。</div>
-        </div>
-        <div class="thought-card rust">
-          <div class="thought-h">沉降之性</div>
-          <div class="thought-body">果實、種子及礦石類藥材因質重而多具「沉降」之性，能引氣下行，治理下焦病症。</div>
-        </div>
+        <div class="thought-card teal"><div class="thought-h">升浮之性</div><div class="thought-body">花、葉類藥材因質輕而多具「升浮」之性，能引藥上行，作用於人體上焦，治療上焦病症。</div></div>
+        <div class="thought-card rust"><div class="thought-h">沉降之性</div><div class="thought-body">果實、種子及礦石類藥材因質重而多具「沉降」之性，能引氣下行，治理下焦病症。</div></div>
       </div>
     </div>
     <div class="card">
@@ -869,7 +411,7 @@ footer span{color:var(--gold2);}
     </div>
   </div>
 
-  <!-- Tab 5: 藥材辨識 -->
+  <!-- Tab 5 -->
   <div class="ltab-content" id="t5">
     <div class="card">
       <div class="card-title">五感學習法—十全大補湯藥材辨識</div>
@@ -877,22 +419,13 @@ footer span{color:var(--gold2);}
     </div>
     <div class="card">
       <div class="card-title">學習成效與反思</div>
-      <div class="challenge-item">
-        <div class="ch-icon" style="font-size:12px;">五感</div>
-        <div><div class="ch-label">五感學習法的優勢</div><div class="ch-body">五感學習法大幅提升了記憶的深度，比單純閱讀課本更具成效。親身接觸藥材後，對其性味歸經的記憶更加牢固，考核時的辨識信心顯著提高。</div></div>
-      </div>
-      <div class="challenge-item">
-        <div class="ch-icon" style="font-size:12px;">君臣</div>
-        <div><div class="ch-label">君臣佐使配伍原則</div><div class="ch-body">理解每味藥材在十全大補湯中的角色，對「君臣佐使」的配伍原則有了更直觀的認識，從具體到抽象的學習路徑效果顯著。</div></div>
-      </div>
-      <div class="challenge-item" style="border-bottom:none;">
-        <div class="ch-icon" style="font-size:12px;">計畫</div>
-        <div><div class="ch-label">後續計畫</div><div class="ch-body">辨識相似藥材的能力需要持續累積，未來將主動尋找更多實體觀察藥材的機會，並製作圖文並茂的個人藥材辨識筆記。</div></div>
-      </div>
+      <div class="challenge-item"><div class="ch-icon" style="font-size:12px;">五感</div><div><div class="ch-label">五感學習法的優勢</div><div class="ch-body">五感學習法大幅提升了記憶的深度，比單純閱讀課本更具成效。親身接觸藥材後，對其性味歸經的記憶更加牢固，考核時的辨識信心顯著提高。</div></div></div>
+      <div class="challenge-item"><div class="ch-icon" style="font-size:12px;">君臣</div><div><div class="ch-label">君臣佐使配伍原則</div><div class="ch-body">理解每味藥材在十全大補湯中的角色，對「君臣佐使」的配伍原則有了更直觀的認識，從具體到抽象的學習路徑效果顯著。</div></div></div>
+      <div class="challenge-item" style="border-bottom:none;"><div class="ch-icon" style="font-size:12px;">計畫</div><div><div class="ch-label">後續計畫</div><div class="ch-body">辨識相似藥材的能力需要持續累積，未來將主動尋找更多實體觀察藥材的機會，並製作圖文並茂的個人藥材辨識筆記。</div></div></div>
     </div>
   </div>
 
-  <!-- Tab 6: 針灸手法練習 -->
+  <!-- Tab 6 -->
   <div class="ltab-content" id="t6">
     <div class="card">
       <div class="card-title">學習過程</div>
@@ -900,22 +433,13 @@ footer span{color:var(--gold2);}
     </div>
     <div class="card">
       <div class="card-title">學習困難與心得</div>
-      <div class="challenge-item">
-        <div class="ch-icon" style="font-size:12px;">指力</div>
-        <div><div class="ch-label">初期指力不足</div><div class="ch-body">進針時容易出現針身彎曲的情況，尤其在面對信用卡等高硬度介質時更為明顯。從挫折中反思並修正操作方式，領悟到垂直進針與指力集中的關鍵重要性。</div></div>
-      </div>
-      <div class="challenge-item">
-        <div class="ch-icon" style="font-size:12px;">藝術</div>
-        <div><div class="ch-label">針灸是手感藝術</div><div class="ch-body">體會到針灸不僅是醫術，更是需要高度專注力與反覆練習的手感藝術，技術與心境缺一不可。</div></div>
-      </div>
-      <div class="challenge-item" style="border-bottom:none;">
-        <div class="ch-icon" style="font-size:12px;">攤位</div>
-        <div><div class="ch-label">針灸體驗攤位籌辦</div><div class="ch-body">在成果發表中設立針灸體驗攤位，提升組織協調能力，並思考如何將專業知識轉化為大眾易懂的體驗。</div></div>
-      </div>
+      <div class="challenge-item"><div class="ch-icon" style="font-size:12px;">指力</div><div><div class="ch-label">初期指力不足</div><div class="ch-body">進針時容易出現針身彎曲的情況，尤其在面對信用卡等高硬度介質時更為明顯。從挫折中反思並修正操作方式，領悟到垂直進針與指力集中的關鍵重要性。</div></div></div>
+      <div class="challenge-item"><div class="ch-icon" style="font-size:12px;">藝術</div><div><div class="ch-label">針灸是手感藝術</div><div class="ch-body">體會到針灸不僅是醫術，更是需要高度專注力與反覆練習的手感藝術，技術與心境缺一不可。</div></div></div>
+      <div class="challenge-item" style="border-bottom:none;"><div class="ch-icon" style="font-size:12px;">攤位</div><div><div class="ch-label">針灸體驗攤位籌辦</div><div class="ch-body">在成果發表中設立針灸體驗攤位，提升組織協調能力，並思考如何將專業知識轉化為大眾易懂的體驗。</div></div></div>
     </div>
   </div>
 
-  <!-- Tab 7: 醫學體驗 -->
+  <!-- Tab 7 -->
   <div class="ltab-content" id="t7">
     <div class="camp-grid">
       <div class="camp-card">
@@ -963,7 +487,8 @@ footer span{color:var(--gold2);}
 <div class="section-inner">
   <div class="page-title">社團與幹部</div>
   <p class="page-desc">課外參與・領導經驗・多元發展</p>
-  <div class="club-grid">
+
+  <div class="club-grid" style="margin-bottom:32px;">
     <div class="club-card">
       <div class="club-head">社團活動</div>
       <div class="club-item"><span>資訊研究社</span><span class="club-tag">專題長</span></div>
@@ -972,12 +497,158 @@ footer span{color:var(--gold2);}
     </div>
     <div class="club-card">
       <div class="club-head" style="background:var(--teal);">班級幹部</div>
-      <div class="club-item"><span>副學藝股長</span></div>
-      <div class="club-item"><span>副資訊股長</span></div>
-      <div class="club-item"><span>生物小老師</span></div>
-      <div class="club-item"><span>數學小老師</span></div>
+      <div class="club-item"><span>高一上 生物小老師</span></div>
+      <div class="club-item"><span>高二上 副學藝股長</span></div>
+      <div class="club-item"><span>高二下 數學小老師</span></div>
+      <div class="club-item"><span>高三上 副資訊股長</span></div>
     </div>
   </div>
+
+  <!-- 班級幹部詳細 -->
+  <div class="card">
+    <div class="card-title">生物小老師（高一上）</div>
+    <div class="detail-section">
+      <div class="two-col">
+        <div class="info-block">
+          <h4>職責說明</h4>
+          <ul>
+            <li>協助老師收發生物作業</li>
+            <li>課堂中輔導同學理解生物知識</li>
+            <li>課堂後協助複習實驗步驟、重點名詞與考試重點</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>能力成長</h4>
+          <ul>
+            <li>邏輯表達能力：拆解複雜概念清楚說明</li>
+            <li>知識統整能力：主動重整課程重點強化理解</li>
+            <li>耐心與同理心：因材施教調整說明方式</li>
+            <li>主動學習態度：養成協助前先確保自身理解的習慣</li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail-body" style="margin-top:16px;">
+        <p><strong style="color:var(--navy);">困難：</strong>生物科目涵蓋範圍廣泛，在協助同學時，經常需要在短時間內統整大量知識並清楚說明，對自身的理解程度是一大考驗。同學在生物上卡關讓我想起自己學習其他科目時的迷惘。教生物時，有時開口說明，才發現自己其實只是背下來而非真正理解，反而補上了原本的漏洞。</p>
+        <p><strong style="color:var(--navy);">心得：</strong>擔任生物小老師讓我對生物學產生更濃厚的興趣。這段經歷讓我體會到主動學習與助人分享的樂趣，也讓我更能設身處地思考同學的學習困境。找出癥結且因人說明的能力，將會是與病患溝通的基礎。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">副學藝股長（高二上）</div>
+    <div class="detail-section">
+      <div class="two-col">
+        <div class="info-block">
+          <h4>職務概述</h4>
+          <ul>
+            <li>負責每日教室日誌之填寫與簽核</li>
+            <li>統籌班級環境美化與節慶布置事宜</li>
+            <li>涵蓋自我管理、創意規劃與團隊協作</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>能力成長</h4>
+          <ul>
+            <li>執行穩定度：日復一日的落實體現真正責任感</li>
+            <li>觀察力的培養：將行政事務轉化為系統性觀察</li>
+            <li>問題解決思維：在限制條件下主動尋找可行方案</li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail-body" style="margin-top:16px;">
+        <p><strong style="color:var(--navy);">挑戰一——行政執行的持續性：</strong>每日準時完成教室日誌填寫與簽核，是整學期最具考驗性的任務之一。我主動建立固定的完成時間（導師時間），將日誌填寫納入每日例行流程。</p>
+        <p><strong style="color:var(--navy);">挑戰二——資源有限下的創意：</strong>聖誕節教室布置以「娃娃與童趣」為核心主題，在有限預算內進行視覺規劃，兼顧整體美感與療癒氛圍的營造。</p>
+        <p><strong style="color:var(--navy);">挑戰三——多方意見的協調：</strong>面對不同的審美偏好與意見分歧，我採取積極傾聽的態度，釐清各方訴求後尋求共識，最終順利完成布置並獲得同學正向回饋。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">數學小老師（高二下）</div>
+    <div class="detail-section">
+      <div class="two-col">
+        <div class="info-block">
+          <h4>職責說明</h4>
+          <ul>
+            <li>協助老師收發數學作業、考卷</li>
+            <li>主動向同學說明解題步驟與概念</li>
+            <li>針對同學的錯誤題型進行說明與補充</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>能力成長</h4>
+          <ul>
+            <li>邏輯表達能力：將複雜解題步驟拆解清楚說明</li>
+            <li>耐心與同理心：面對不同程度同學因材施教</li>
+            <li>系統化思維：歸納整理龐雜的知識架構</li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail-body" style="margin-top:16px;">
+        <p><strong style="color:var(--navy);">困難：</strong>最大的挑戰是如何將複雜的數學概念以同學能理解的方式表達。有時候自己能解出答案，卻難以用簡單的語言說明解題邏輯。教數學時，我發現解釋完對方還是不懂是常態。後來我學會不急著給答案，而是先看對方的解題過程，找出真正卡住的環節。</p>
+        <p><strong style="color:var(--navy);">心得：</strong>透過擔任數學小老師，我深刻體會到「教是最好的學」這句話的含義。每次幫助同學解題前，都必須先確認自己真正理解了概念，這讓我對課程內容有了更扎實的掌握。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">副資訊股長（高三上）</div>
+    <div class="detail-section">
+      <div class="two-col">
+        <div class="info-block">
+          <h4>職責說明</h4>
+          <ul>
+            <li>每日負責班級電腦及相關設備的開機與關機</li>
+            <li>協助處理基本電腦故障，如畫面異常、設備無法啟動等問題</li>
+            <li>下課時協助老師將電腦切換成投影模式</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>能力成長</h4>
+          <ul>
+            <li>設備操作能力：熟悉電腦與投影設備的日常操作</li>
+            <li>應變與判斷能力：面對突發性設備問題評估狀況</li>
+            <li>責任感：每日固定執行開關機流程，養成按時負責習慣</li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail-body" style="margin-top:16px;">
+        <p><strong style="color:var(--navy);">困難：</strong>最常遇到的困難是設備突發性的故障問題。有時在老師即將上課前才發現設備無法正常運作，需要在極短的時間內找出問題並解決，壓力相當大。</p>
+        <p><strong style="color:var(--navy);">心得：</strong>透過這份工作，我對電腦與投影設備的操作有了更深入的了解，也逐漸培養出對設備問題的敏感度與應變能力。開關機看似簡單，但若未落實，便可能影響到全班的學習秩序，讓我深刻體認細心與負責的意義。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 社團詳細 -->
+  <div class="card">
+    <div class="card-title">合唱團—聖誕快閃演出（高一）</div>
+    <div class="detail-body">
+      <p>聖誕節對我來說是一個傳遞快樂給他人的節日，因此從小就熱愛歌唱的我藉由參加合唱團與 30 位團員歷經 3 個月的密集籌備，向學校附近的年長者、老師、學生們散播快樂的種子。</p>
+      <p><strong style="color:var(--navy);">核心學習一——針對不同受眾設定策略：</strong>為了向國小生到年長者等不同族群傳遞快樂，我們討論並調整曲目——面對長輩著重台語懷舊金曲並加入肢體律動，面對小學生則近距離互動。</p>
+      <p><strong style="color:var(--navy);">核心學習二——具備敏銳洞察情緒：</strong>在活動中需時時觀察聽眾的反饋，即時調整表演狀態。</p>
+      <p><strong style="color:var(--navy);">克服困難：</strong>若在校外走訪遇到場地過小，我們即興應變，有些人在外面和聲並邀請路人一同參與。這次演出讓我深刻感受到，真正的團隊默契不只在練習室裡養成，更在臨場的相互信任中展現。</p>
+      <p><strong style="color:var(--navy);">反思：</strong>這段經歷讓我理解「團隊合作」不只是完成工作，而是透過集體的力量創造出單打獨鬥無法達成的社會影響力。當我們唱起《Jingle Bells》，看到原本安靜的長輩開始拍手跟唱時，我深刻感受到這份力量。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">資訊研究社—專題長（高一）</div>
+    <div class="detail-body">
+      <p>透過遞迴與函數的學習，我理解到程式不只是語法，更是邏輯思考的展現。</p>
+      <ul style="margin:12px 0;padding-left:20px;font-size:14px;line-height:2;">
+        <li>系統化學習 C++ 程式語言：參與每週兩次的實體與 Discord 線上課程，掌握從基礎 I/O、變數運算到進階流程控制（if/else, loop）</li>
+        <li>技術支援：協助社員克服問題，並利用 Discord 進行線上諮詢與技術交流</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">橋藝社—技術長（高一）</div>
+    <div class="detail-body">
+      <p>橋牌不僅僅是紙牌遊戲，更是一場關於資訊處理與風險控管的博弈。透過老師的講解，我意識到在不確定性中尋求邏輯支持，是這門藝術最吸引人的地方。</p>
+    </div>
+  </div>
+
 </div>
 </section>
 
@@ -986,19 +657,52 @@ footer span{color:var(--gold2);}
 <div class="section-inner">
   <div class="page-title">服務學習</div>
   <p class="page-desc">回饋社會・實踐關懷</p>
+
   <div class="card">
     <ul class="service-list">
       <li class="service-item">
         <div class="sv-icon">🏥</div>
-        <div><div class="sv-name">台大醫院志工</div><div class="sv-desc">協助醫療材料整理與補充醫療用品，觀察醫療體系中分工與合作的重要性，深刻體會醫療現場的運作模式與專業分工邏輯。</div></div>
+        <div>
+          <div class="sv-name">台大醫院 7B病房 志工</div>
+          <div class="sv-desc" style="margin-bottom:10px;">協助醫材裁剪與文書處理，近距離觀察醫療現場的運作。</div>
+          <div class="detail-body" style="font-size:13px;">
+            <p>從國小定期到醫院施打減敏針的我，時常看到從容不迫的醫生蹲下來安撫孩子，讓我產生了最初的好奇。高中時，我主動報名台大醫院志工，負責醫材裁剪與文書處理。雖是基層工作，卻讓我近距離觀察醫療現場的樣貌，醫護人員即便手邊工作不斷，仍在轉身面對病患的瞬間切換成耐心而溫柔的狀態，讓我更確信醫療不只是技術的施展，更是以人為本的陪伴。</p>
+            <p><strong style="color:var(--navy);">困難：</strong>醫院環境步調快速，需快速理解指令並降低出錯率，才能避免造成他人的困擾。</p>
+            <p><strong style="color:var(--navy);">反思：</strong>在醫療場域中，即使是看似簡單的輔助工作，也與病患安全息息相關，深刻體會細心與負責的重要性。</p>
+          </div>
+        </div>
       </li>
       <li class="service-item">
         <div class="sv-icon">🌊</div>
-        <div><div class="sv-name">白沙灣淨灘</div><div class="sv-desc">參與海岸環境保護活動，體認環境永續的重要性，從行動中落實對自然的關懷。</div></div>
+        <div>
+          <div class="sv-name">白沙灣淨灘</div>
+          <div class="sv-desc" style="margin-bottom:10px;">參與海岸環境保護活動，體認環境永續的重要性。</div>
+          <div class="detail-body" style="font-size:13px;">
+            <p>白沙灣海灘上散落大片破碎塑膠與廢棄漁網，遠看美麗的海岸，近看卻是另一景象。街道的排水溝則塞滿了菸蒂，日積月累地隨雨水流入水系。這讓我意識到，環境汙染從來不只是生態問題，塑膠微粒沿食物鏈進入人體、菸蒂毒素滲入水源，都是公共衛生的隱患。預防疾病需延伸到診間外，而改變往往從彎下腰開始。</p>
+            <p><strong style="color:var(--navy);">反思：</strong>淨灘是治標行為，若無從源頭減少垃圾產生的意識，問題將循環出現。親眼看見大量垃圾堆積於自然海岸，意識到個人一次性用品對環境的長遠影響。</p>
+          </div>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="sv-icon">🏘️</div>
+        <div>
+          <div class="sv-name">社區環境打掃</div>
+          <div class="sv-desc" style="margin-bottom:10px;">參與社區環境整理，培養公民責任感。</div>
+          <div class="detail-body" style="font-size:13px;">
+            <p>參與社區環境整潔志工服務，範圍包含巷弄、公共空間及水溝蓋附近，協助清掃落葉、撿拾煙蒂，完成指定區域的清潔任務。</p>
+            <p><strong style="color:var(--navy);">反思：</strong>服務過程中發現許多長輩獨居，社區人際連結較為薄弱，清潔服務的意義不只是打掃，更是一種關懷與陪伴。與不同年齡層居民溝通時，需調整表達方式以建立良好互動。</p>
+          </div>
+        </div>
       </li>
       <li class="service-item" style="border-bottom:none;">
-        <div class="sv-icon">🏘️</div>
-        <div><div class="sv-name">社區清潔服務</div><div class="sv-desc">參與社區環境整理，培養公民責任感，以具體行動貢獻所在的生活環境。</div></div>
+        <div class="sv-icon">🦒</div>
+        <div>
+          <div class="sv-name">動物園鳥園車站志工</div>
+          <div class="sv-desc" style="margin-bottom:10px;">對動物生態的好奇與累積與人互動的經驗，促使我報名動物園志工。</div>
+          <div class="detail-body" style="font-size:13px;">
+            <p>一位獨自前來的自閉症遊客讓我印象深刻，他無法清楚表達，我試著從肢體動作逐步判斷，才協助他順利上車，讓我意識到溝通不只在於言語。休息時看到小熊貓來回踱步，也許是圈養環境下的刻板行為。無法言說的牠，讓我想到難以表達不適的病患，讀懂話語外的訊號是醫者需要的一門課。</p>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
@@ -1052,25 +756,225 @@ footer span{color:var(--gold2);}
 <div class="section-inner">
   <div class="page-title">競賽成果</div>
   <p class="page-desc">學術・音樂・語言・多元能力展現</p>
-  <div class="award-grid">
+
+  <div class="award-grid" style="margin-bottom:40px;">
     <div class="award-block">
       <div class="award-header">學術競賽</div>
       <div class="award-item"><span class="award-rank">榮譽獎</span><span>化學奧林匹亞初選</span></div>
       <div class="award-item"><span class="award-rank">全國前 3%</span><span>AMC12 數學競賽</span></div>
-      <div class="award-item"><span class="award-rank">優良獎</span><span>TRML 數學競賽 團體組</span></div>
+      <div class="award-item"><span class="award-rank">優良獎</span><span>TRML 數學競賽 台北地區團體</span></div>
+      <div class="award-item"><span class="award-rank">最佳劇本獎</span><span>英語話劇競賽</span></div>
     </div>
     <div class="award-block">
       <div class="award-header gold">音樂競賽</div>
-      <div class="award-item"><span class="award-rank">第二名</span><span>台北市大提琴獨奏</span></div>
+      <div class="award-item"><span class="award-rank">第二名</span><span>台北市北區大提琴獨奏</span></div>
       <div class="award-item"><span class="award-rank">第三名</span><span>藝享盃</span></div>
       <div class="award-item"><span class="award-rank">第二名</span><span>桃花源盃</span></div>
     </div>
     <div class="award-block">
       <div class="award-header teal">語言能力</div>
       <div class="award-item"><span class="award-rank">880 分</span><span>TOEIC 多益測驗</span></div>
-      <div class="award-item"><span class="award-rank">通過</span><span>全民英檢中高級</span></div>
+      <div class="award-item"><span class="award-rank">通過</span><span>全民英檢中高級初試</span></div>
+      <div class="award-item"><span class="award-rank">A 級滿分</span><span>高中英語聽力測驗</span></div>
     </div>
   </div>
+
+  <!-- 大提琴 -->
+  <div class="card">
+    <div class="card-title">大提琴競賽——十年琴聲的淬鍊</div>
+    <div class="detail-body">
+      <p>從小被大提琴家杜普蕾演奏的艾爾加與德弗札克大提琴協奏曲所著迷的我，開啟了十年的大提琴生涯。這段歷程中，我解決了兩個核心問題。</p>
+    </div>
+    <div class="two-col" style="margin-top:16px;">
+      <div class="thought-card teal">
+        <div class="thought-h">挑戰一：左手抖音頻率不穩定</div>
+        <div class="thought-body">以系統性的方式解決問題——用節拍器輔助並藉由音階逐一訓練不同頻率的抖音，順便鍛練基本功，以建立穩定的肌肉記憶，將複雜問題條理化。</div>
+      </div>
+      <div class="thought-card gold">
+        <div class="thought-h">挑戰二：上台表現的心理關卡</div>
+        <div class="thought-body">初期因緊張導致臨場失常，逐漸學會透過專注伴奏、調整呼吸來穩定情緒，並藉由不斷練習增加肌肉記憶，在高壓情境下維持應有的水準。</div>
+      </div>
+    </div>
+    <div class="quote-block" style="margin-top:16px;">面對未來的醫學道路，我深知診療現場同樣需要在高壓中保持冷靜、在複雜中理出脈絡，而十年琴聲早已為我準備齊全。</div>
+  </div>
+
+  <!-- 英語話劇 -->
+  <div class="card">
+    <div class="card-title">英語話劇競賽——最佳劇本獎（高二）</div>
+    <div class="detail-body">
+      <p>高二，憑藉對創作故事的熱忱，我投入編劇工作。創作過程中，我深刻體會到溝通與傾聽的價值。</p>
+      <p><strong style="color:var(--navy);">遭遇困難：</strong>在多人共同創作時，常因創意分歧導致進度停滯。面對苦心創作的點子被否決時，一開始難免感到挫折，但我意識到劇組是一個團隊，必須放下個人本位。</p>
+      <p><strong style="color:var(--navy);">解決方案——民主機制：</strong>共擬出四款劇本草案，邀請全班同學參與投票，最終選出第 3 版。這不僅化解了小組內的僵局，也提升了班級的凝聚力。</p>
+    </div>
+    <div style="margin-top:16px;">
+      <p style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:12px;">劇本角色分析</p>
+      <table class="vsepr-table">
+        <thead>
+          <tr><th>角色</th><th>定義/核心動機</th><th>象徵意義</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>男主角（兒子）</td><td>犧牲與孝順，不惜付出生命回報母親</td><td>善良但容易受誤導、走投無路的底層人民</td></tr>
+          <tr><td>男配角（教主）</td><td>傲慢與極端，自詡為救世主</td><td>偽善的邪教與自以為是的強權者</td></tr>
+          <tr><td>女主角（姊姊）</td><td>悔恨與覺醒，從幫兇轉變為揭發者</td><td>被愛情與權力矇蔽後的醒悟</td></tr>
+          <tr><td>女配角（母親）</td><td>自責與宿命，成為儀式的犧牲品</td><td>辛勞一輩子卻始終無法掌握命運的弱勢階級</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="quote-block" style="margin-top:16px;">細心、溝通、以人為本會是我未來在醫學道路上越走越長的基石。</div>
+  </div>
+
+  <!-- 化奧 -->
+  <div class="card">
+    <div class="card-title">化學奧林匹亞初選——榮譽獎 ＋ VSEPR 分子模型製作</div>
+    <div class="detail-body">
+      <p>由於平時喜歡用狗毛製作羊毛氈，出於對動手實作的喜愛，在研究 VSEPR 時，我以輕黏土與竹筷自製分子模型。製作過程中，四面體形 109.5° 的鍵角難以直接定位，經反覆調整後，改以等長竹筷對稱擺放輔助定位才得以完成。這段經歷讓我在化奧初選中更熟練地繪製分子模型，最終獲得榮譽獎。</p>
+    </div>
+    <div class="two-col" style="margin-top:16px;">
+      <div class="info-block">
+        <h4>製作材料</h4>
+        <ul>
+          <li>黏土：製作孤對電子、包覆中心原子</li>
+          <li>保麗龍球：製作原子（直徑3cm）</li>
+          <li>竹筷：製作鍵結（5cm，中間3cm包白色輕黏土）</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>克服困難</h4>
+        <ul>
+          <li>跨越知識斷層：自主複習有機化學與熱力學，將抽象公式轉化為具體分子模型</li>
+          <li>高效時間控管：每日固定保留 1.5 小時處理高難度化學題組</li>
+          <li>解題技巧：訓練歸納、演繹，快速跳過不重要的資訊</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:20px;">
+      <p style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:12px;">VSEPR 各雜化軌域對應分子形狀</p>
+      <table class="vsepr-table">
+        <thead>
+          <tr><th>電子對數</th><th>混層類型</th><th>孤電子對數</th><th>分子形狀</th><th>例子</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2</td><td>sp</td><td>0</td><td>直線形</td><td>BeCl₂、CO₂</td></tr>
+          <tr><td rowspan="2">3</td><td rowspan="2">sp²</td><td>0</td><td>平面正三角形</td><td>BCl₃</td></tr>
+          <tr><td>1</td><td>彎曲形</td><td>SO₂</td></tr>
+          <tr><td rowspan="3">4</td><td rowspan="3">sp³</td><td>0</td><td>正四面體</td><td>CH₄</td></tr>
+          <tr><td>1</td><td>三角錐</td><td>NH₃</td></tr>
+          <tr><td>2</td><td>彎曲形</td><td>H₂O</td></tr>
+          <tr><td rowspan="4">5</td><td rowspan="4">dsp³</td><td>0</td><td>雙三角錐</td><td>PCl₅</td></tr>
+          <tr><td>1</td><td>蹺蹺板形</td><td>TeCl₄</td></tr>
+          <tr><td>2</td><td>T字形</td><td>ClF₃</td></tr>
+          <tr><td>3</td><td>直線形</td><td>I₃⁻</td></tr>
+          <tr><td rowspan="3">6</td><td rowspan="3">d²sp³</td><td>0</td><td>正八面體</td><td>SF₆</td></tr>
+          <tr><td>1</td><td>金字塔形</td><td>IF₅</td></tr>
+          <tr><td>2</td><td>平面四邊形</td><td>ICl₄⁻</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRML -->
+  <div class="card">
+    <div class="card-title">TRML 數學競賽——台北地區團體優良獎（高一・高二）</div>
+    <div class="detail-body">
+      <p>TRML 是一場以團隊合作為核心的數學競賽。高一初次參賽，我就擔任隊長，在分析各題型難度後依隊友強項進行分配，最終以個人全隊最高分完賽。高二我調整角色，更著重於整體節奏的掌控與隊員間的默契培養，學會在混亂中保持條理，最終獲得台北地區團體優良獎。</p>
+    </div>
+    <div class="two-col" style="margin-top:16px;">
+      <div class="thought-card teal">
+        <div class="thought-h">高一挫折——個人精準度</div>
+        <div class="thought-body">在團體賽中雖然準備進度超前，但卻在自己負責的題目中出現粗心失誤。作為領導者，維持自身穩定性與檢查機制是非常重要的。</div>
+      </div>
+      <div class="thought-card rust">
+        <div class="thought-h">高一挫折——邏輯推導瓶頸</div>
+        <div class="thought-body">發現自己過度依賴列舉法找規律，導致當題目難度提升時，無法及時轉化為代數推導而卡關，反映出高階數學邏輯建構上仍有進步空間。</div>
+      </div>
+    </div>
+    <div class="detail-body" style="margin-top:16px;">
+      <p><strong style="color:var(--navy);">學習收穫：</strong>從這次競賽，我學會了如何建議分配不同特長（如：計算快、思考深、穩定度高）的團員擔任合適的棒次，瞭解「管理」是讓團隊發揮 1+1&gt;2 的關鍵。</p>
+    </div>
+  </div>
+
+  <!-- AMC12 -->
+  <div class="card">
+    <div class="card-title">AMC12 數學競賽——全國前 3%</div>
+    <div class="detail-body">
+      <p>AMC 12 題目設計靈活，比起單純的計算，更考驗靈活運用幾何、數論、代數與組合數學的能力。</p>
+    </div>
+    <div class="two-col" style="margin-top:16px;">
+      <div class="info-block">
+        <h4>參賽動機</h4>
+        <ul>
+          <li>在國際標準下測試自己的實力</li>
+          <li>培養抗壓性和高壓下的判斷力</li>
+          <li>強化分析複雜問題的系統性思維</li>
+          <li>建立解讀數據時必備的數學素養</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>克服困難</h4>
+        <ul>
+          <li>學會「停損」與「跳題」策略，最大化得分</li>
+          <li>發展出「自我查核機制」，同步進行邏輯檢驗</li>
+          <li>研讀歷屆試題，練習跨領域公式整合應用</li>
+          <li>耐心拆解已知條件，主動尋找多種解法</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote-block" style="margin-top:16px;">獲得全球前 3% 的優異成績，讓我相信這不僅代表數學能力優異，更象徵具備極佳的邏輯推理與解題耐力。</div>
+  </div>
+
+  <!-- 英語 -->
+  <div class="card">
+    <div class="card-title">英語能力測驗</div>
+    <div class="two-col">
+      <div class="info-block">
+        <h4>全民英檢中高級初試通過</h4>
+        <ul>
+          <li>能夠理解英文報章雜誌的內容</li>
+          <li>在較為複雜的溝通情境中掌握語意</li>
+          <li>確認英語能力已從「課堂學習」跨越到「實際應用」</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>TOEIC 多益 880 分</h4>
+        <ul>
+          <li>尚未大量刷題的情況下首次應試即進入高分區間</li>
+          <li>代表平日累積的英語實力已真正內化</li>
+          <li>能在職場情境中流暢閱讀英文報告、理解英語會議</li>
+        </ul>
+      </div>
+    </div>
+    <div class="detail-body" style="margin-top:16px;">
+      <p><strong style="color:var(--navy);">學習歷程：</strong>從國小起便養成接觸英語聽力素材的習慣，包括收看英語 YouTube 頻道、收聽 Podcast，以及練習影子跟讀。每週至少閱讀 3 篇英語文章，並每天與 AI 對話半小時，從「準備好才說」變成一種習慣；透過觀看 TED 演講，在累積語感的同時接觸國際議題。</p>
+      <p><strong style="color:var(--navy);">未來展望：</strong>閱讀英文學術文獻、參與國際交流計畫，用英語真正表達自己的想法與專業。英語能力對未來參與跨國醫學交流，將是最實用的基礎。</p>
+    </div>
+  </div>
+
+  <!-- 高中服裝組 -->
+  <div class="card">
+    <div class="card-title">英語話劇——高一服裝組組員</div>
+    <div class="two-col">
+      <div class="info-block">
+        <h4>技能解鎖與精準執行</h4>
+        <ul>
+          <li>首次挑戰縫紉機操作，短時間將新技能轉化為實際生產力</li>
+          <li>針對「盔甲」質感實驗：紙板上色、彈力帶連接與機械縫紉</li>
+          <li>成功打造具備視覺張力的舞台服裝</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h4>團隊意識與跨組協作</h4>
+        <ul>
+          <li>提前完成個人進度後，主動投入背板繪製與梳妝台裝飾</li>
+          <li>在「布料」與「紙板」的方案爭執中，透過理性討論達成共識</li>
+          <li>在多個小組間穿梭，確保各組成品和諧呈現在同一舞台上</li>
+        </ul>
+      </div>
+    </div>
+    <div class="detail-body" style="margin-top:16px;">
+      <p><strong style="color:var(--navy);">挫折與責任感：</strong>比賽結果不如預期（僅得到燈光音效獎）時，學習與班級成員共同面對失落。堅持「善後」原則，無論成績好壞，均帶領團隊清理環境並妥善回收道具。</p>
+    </div>
+  </div>
+
 </div>
 </section>
 
@@ -1092,7 +996,7 @@ footer span{color:var(--gold2);}
   </div>
 
   <div class="wuxing-wrap">
-    <div class="wuxing-title">五行互動——點擊了解相生關係</div>
+    <div class="wuxing-title">五行互動——點擊了解相生相克關係</div>
     <div class="wuxing">
       <div class="element ew" onclick="elInfo(this,'木','木生火：木燃而生火，肝木滋養心火','木克土：木疏土，肝氣影響脾胃功能')">木</div>
       <div class="element ef" onclick="elInfo(this,'火','火生土：火燃灰成土，心火溫煦脾土','火克金：火煉金，心火制約肺金')">火</div>
@@ -1159,14 +1063,12 @@ function show(id,btn){
   btn.classList.add('active-nav');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
 function showTab(id,btn){
   document.querySelectorAll('.ltab-content').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.ltab').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
-
 function elInfo(el,name,sheng,ke){
   document.querySelectorAll('.element').forEach(e=>e.classList.remove('selected'));
   el.classList.add('selected');
