@@ -198,27 +198,19 @@ nav button.active-nav{color:var(--gold);border-bottom-color:var(--gold);}
 footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:32px;font-size:12px;letter-spacing:.1em;margin-top:60px;}
 footer span{color:var(--gold2);}
 
-/* PHOTO GALLERY */
-.photo-row{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;}
-.photo-row.cols-1 .photo-slot{flex:1 1 100%;}
-.photo-row.cols-2 .photo-slot{flex:1 1 calc(50% - 6px);}
-.photo-row.cols-3 .photo-slot{flex:1 1 calc(33.33% - 8px);}
-.photo-row.cols-4 .photo-slot{flex:1 1 calc(25% - 9px);}
-.photo-slot{position:relative;border-radius:8px;overflow:hidden;background:var(--pale);border:1px solid var(--border);}
-.photo-slot img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .3s;}
-.photo-slot:hover img{transform:scale(1.03);}
-.photo-slot.tall img{height:300px;}
-.photo-slot.short img{height:160px;}
-.photo-caption{padding:8px 12px;font-size:12px;color:var(--muted);text-align:center;background:var(--white);line-height:1.5;}
-.photo-placeholder{width:100%;height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--pale);color:var(--muted);font-size:12px;letter-spacing:.05em;gap:8px;cursor:default;}
-.photo-placeholder.tall{height:300px;}
-.photo-placeholder.short{height:160px;}
-.photo-placeholder svg{opacity:.4;}
-.photo-label{font-size:11px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:4px;}
-
-/* SECTION PHOTO DIVIDER */
-.photo-divider{margin:28px 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);}
-.photo-divider img{width:100%;max-height:360px;object-fit:cover;display:block;}
+/* PDF EMBED */
+.pdf-row{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;}
+.pdf-row.cols-1 .pdf-slot{flex:1 1 100%;}
+.pdf-row.cols-2 .pdf-slot{flex:1 1 calc(50% - 6px);}
+.pdf-row.cols-3 .pdf-slot{flex:1 1 calc(33.33% - 8px);}
+.pdf-row.cols-4 .pdf-slot{flex:1 1 calc(25% - 9px);}
+.pdf-slot{position:relative;border-radius:8px;overflow:hidden;background:var(--pale);border:1px solid var(--border);}
+.pdf-slot iframe{width:100%;height:320px;display:block;border:none;}
+.pdf-slot.short iframe{height:240px;}
+.pdf-slot.tall iframe{height:440px;}
+.pdf-caption{padding:8px 12px;font-size:12px;color:var(--muted);text-align:center;background:var(--white);line-height:1.5;}
+.pdf-link-btn{display:block;text-align:center;padding:10px 16px;background:var(--navy);color:var(--gold2);font-size:12px;letter-spacing:.08em;text-decoration:none;transition:background .2s;}
+.pdf-link-btn:hover{background:var(--navy2);}
 
 @media(max-width:768px){
   .header-inner{grid-template-columns:1fr;padding:40px 24px;}
@@ -228,9 +220,9 @@ footer span{color:var(--gold2);}
   .award-grid{grid-template-columns:1fr;}
   nav button{padding:14px 14px;font-size:12px;}
   .nav-inner{padding:0 16px;}
-  .photo-row.cols-2 .photo-slot,
-  .photo-row.cols-3 .photo-slot,
-  .photo-row.cols-4 .photo-slot{flex:1 1 calc(50% - 6px);}
+  .pdf-row.cols-2 .pdf-slot,
+  .pdf-row.cols-3 .pdf-slot,
+  .pdf-row.cols-4 .pdf-slot{flex:1 1 calc(50% - 6px);}
 }
 </style>
 </head>
@@ -301,11 +293,13 @@ footer span{color:var(--gold2);}
     </div>
   </div>
 
-  <!-- 📸 個人照片 - 替換 src 為你的圖片連結 -->
-  <div class="photo-row cols-3" style="margin-bottom:40px;">
-    <div class="photo-slot"><img src=https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E7%A7%91%E5%AD%B8%E7%8F%AD.pdf><div class="photo-caption">個人照</div></div>
-    <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="薇閣校園"><div class="photo-caption">薇閣中學</div></div>
-    <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="班級合照"><div class="photo-caption">班級合照</div></div>
+  <!-- 科學班證明 -->
+  <div class="pdf-row cols-1" style="margin-bottom:40px;">
+    <div class="pdf-slot">
+      <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E7%A7%91%E5%AD%B8%E7%8F%AD.pdf&embedded=true"></iframe>
+      <div class="pdf-caption">薇閣中學科學資優班 在學證明</div>
+      <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E7%A7%91%E5%AD%B8%E7%8F%AD.pdf" target="_blank">↗ 開啟原始檔案</a>
+    </div>
   </div>
 
   <div class="timeline-section">
@@ -469,12 +463,6 @@ footer span{color:var(--gold2);}
       <div class="challenge-item"><div class="ch-icon" style="font-size:12px;">藝術</div><div><div class="ch-label">針灸是手感藝術</div><div class="ch-body">體會到針灸不僅是醫術，更是需要高度專注力與反覆練習的手感藝術，技術與心境缺一不可。</div></div></div>
       <div class="challenge-item" style="border-bottom:none;"><div class="ch-icon" style="font-size:12px;">攤位</div><div><div class="ch-label">針灸體驗攤位籌辦</div><div class="ch-body">在成果發表中設立針灸體驗攤位，提升組織協調能力，並思考如何將專業知識轉化為大眾易懂的體驗。</div></div></div>
     </div>
-    <!-- 📸 針灸練習照片 -->
-    <div class="photo-row cols-3">
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="針灸練習"><div class="photo-caption">仿人皮入針練習</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="長庚中西醫體驗營針灸"><div class="photo-caption">長庚體驗營針灸課程</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="信用卡進針挑戰"><div class="photo-caption">高難度介質挑戰</div></div>
-    </div>
   </div>
 
   <!-- Tab 7 -->
@@ -598,6 +586,14 @@ footer span{color:var(--gold2);}
         <p><strong style="color:var(--navy);">挑戰二——資源有限下的創意：</strong>聖誕節教室布置以「娃娃與童趣」為核心主題，在有限預算內進行視覺規劃，兼顧整體美感與療癒氛圍的營造。</p>
         <p><strong style="color:var(--navy);">挑戰三——多方意見的協調：</strong>面對不同的審美偏好與意見分歧，我採取積極傾聽的態度，釐清各方訴求後尋求共識，最終順利完成布置並獲得同學正向回饋。</p>
       </div>
+      <!-- 副學藝股長證書 -->
+      <div class="pdf-row cols-1" style="margin-top:20px;">
+        <div class="pdf-slot short">
+          <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E7%8E%8B%E5%A6%8D%E8%8F%AF.pdf&embedded=true"></iframe>
+          <div class="pdf-caption">副學藝股長 服務證明</div>
+          <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E7%8E%8B%E5%A6%8D%E8%8F%AF.pdf" target="_blank">↗ 開啟原始檔案</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -667,12 +663,6 @@ footer span{color:var(--gold2);}
       <p><strong style="color:var(--navy);">克服困難：</strong>若在校外走訪遇到場地過小，我們即興應變，有些人在外面和聲並邀請路人一同參與。這次演出讓我深刻感受到，真正的團隊默契不只在練習室裡養成，更在臨場的相互信任中展現。</p>
       <p><strong style="color:var(--navy);">反思：</strong>這段經歷讓我理解「團隊合作」不只是完成工作，而是透過集體的力量創造出單打獨鬥無法達成的社會影響力。當我們唱起《Jingle Bells》，看到原本安靜的長輩開始拍手跟唱時，我深刻感受到這份力量。</p>
     </div>
-    <!-- 📸 合唱團快閃照片 -->
-    <div class="photo-row cols-3" style="margin-top:16px;">
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="合唱團演出"><div class="photo-caption">快閃演出現場</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="與年長者合照"><div class="photo-caption">與年長者的合照</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="合唱團排練"><div class="photo-caption">練習過程</div></div>
-    </div>
   </div>
 
   <div class="card">
@@ -683,6 +673,14 @@ footer span{color:var(--gold2);}
         <li>系統化學習 C++ 程式語言：參與每週兩次的實體與 Discord 線上課程，掌握從基礎 I/O、變數運算到進階流程控制（if/else, loop）</li>
         <li>技術支援：協助社員克服問題，並利用 Discord 進行線上諮詢與技術交流</li>
       </ul>
+    </div>
+    <!-- 專題長證書 -->
+    <div class="pdf-row cols-1" style="margin-top:16px;">
+      <div class="pdf-slot short">
+        <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E5%B0%88%E9%A1%8C%E9%95%B7.pdf&embedded=true"></iframe>
+        <div class="pdf-caption">資訊研究社 專題長 證書</div>
+        <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E5%B0%88%E9%A1%8C%E9%95%B7.pdf" target="_blank">↗ 開啟原始檔案</a>
+      </div>
     </div>
   </div>
 
@@ -706,7 +704,7 @@ footer span{color:var(--gold2);}
     <ul class="service-list">
       <li class="service-item">
         <div class="sv-icon">🏥</div>
-        <div>
+        <div style="width:100%;">
           <div class="sv-name">台大醫院 7B病房 志工</div>
           <div class="sv-desc" style="margin-bottom:10px;">協助醫材裁剪與文書處理，近距離觀察醫療現場的運作。</div>
           <div class="detail-body" style="font-size:13px;">
@@ -714,10 +712,13 @@ footer span{color:var(--gold2);}
             <p><strong style="color:var(--navy);">困難：</strong>醫院環境步調快速，需快速理解指令並降低出錯率，才能避免造成他人的困擾。</p>
             <p><strong style="color:var(--navy);">反思：</strong>在醫療場域中，即使是看似簡單的輔助工作，也與病患安全息息相關，深刻體會細心與負責的重要性。</p>
           </div>
-          <!-- 📸 台大醫院志工照片 -->
-          <div class="photo-row cols-2" style="margin-top:12px;">
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="台大醫院志工"><div class="photo-caption">台大醫院志工服務</div></div>
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="7B病房志工"><div class="photo-caption">7B 病房工作實況</div></div>
+          <!-- 臺大醫院志工證明 -->
+          <div class="pdf-row cols-1" style="margin-top:12px;">
+            <div class="pdf-slot short">
+              <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E6%8E%83%E6%8F%8F%E7%9A%84%E6%96%87%E4%BB%B6.pdf&embedded=true"></iframe>
+              <div class="pdf-caption">臺大醫院 志工服務 證明文件</div>
+              <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E6%8E%83%E6%8F%8F%E7%9A%84%E6%96%87%E4%BB%B6.pdf" target="_blank">↗ 開啟原始檔案</a>
+            </div>
           </div>
         </div>
       </li>
@@ -730,11 +731,6 @@ footer span{color:var(--gold2);}
             <p>白沙灣海灘上散落大片破碎塑膠與廢棄漁網，遠看美麗的海岸，近看卻是另一景象。街道的排水溝則塞滿了菸蒂，日積月累地隨雨水流入水系。這讓我意識到，環境汙染從來不只是生態問題，塑膠微粒沿食物鏈進入人體、菸蒂毒素滲入水源，都是公共衛生的隱患。預防疾病需延伸到診間外，而改變往往從彎下腰開始。</p>
             <p><strong style="color:var(--navy);">反思：</strong>淨灘是治標行為，若無從源頭減少垃圾產生的意識，問題將循環出現。親眼看見大量垃圾堆積於自然海岸，意識到個人一次性用品對環境的長遠影響。</p>
           </div>
-          <!-- 📸 白沙灣淨灘照片 -->
-          <div class="photo-row cols-2" style="margin-top:12px;">
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="白沙灣淨灘"><div class="photo-caption">白沙灣淨灘活動</div></div>
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="淨灘成果"><div class="photo-caption">清理垃圾成果</div></div>
-          </div>
         </div>
       </li>
       <li class="service-item">
@@ -746,11 +742,6 @@ footer span{color:var(--gold2);}
             <p>參與社區環境整潔志工服務，範圍包含巷弄、公共空間及水溝蓋附近，協助清掃落葉、撿拾煙蒂，完成指定區域的清潔任務。</p>
             <p><strong style="color:var(--navy);">反思：</strong>服務過程中發現許多長輩獨居，社區人際連結較為薄弱，清潔服務的意義不只是打掃，更是一種關懷與陪伴。與不同年齡層居民溝通時，需調整表達方式以建立良好互動。</p>
           </div>
-          <!-- 📸 社區打掃照片 -->
-          <div class="photo-row cols-2" style="margin-top:12px;">
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="社區打掃"><div class="photo-caption">社區打掃現場</div></div>
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="與居民互動"><div class="photo-caption">與居民互動</div></div>
-          </div>
         </div>
       </li>
       <li class="service-item" style="border-bottom:none;">
@@ -760,11 +751,6 @@ footer span{color:var(--gold2);}
           <div class="sv-desc" style="margin-bottom:10px;">對動物生態的好奇與累積與人互動的經驗，促使我報名動物園志工。</div>
           <div class="detail-body" style="font-size:13px;">
             <p>一位獨自前來的自閉症遊客讓我印象深刻，他無法清楚表達，我試著從肢體動作逐步判斷，才協助他順利上車，讓我意識到溝通不只在於言語。休息時看到小熊貓來回踱步，也許是圈養環境下的刻板行為。無法言說的牠，讓我想到難以表達不適的病患，讀懂話語外的訊號是醫者需要的一門課。</p>
-          </div>
-          <!-- 📸 動物園志工照片 -->
-          <div class="photo-row cols-2" style="margin-top:12px;">
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="動物園志工"><div class="photo-caption">動物園鳥園車站志工</div></div>
-            <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="動物園服務"><div class="photo-caption">服務遊客</div></div>
           </div>
         </div>
       </li>
@@ -804,6 +790,14 @@ footer span{color:var(--gold2);}
       </ul>
     </div>
     <div class="camp-card c4">
+      <div class="camp-name">師大影像營</div>
+      <ul class="camp-items">
+        <li>學習影像紀錄與視覺敘事的基礎技能</li>
+        <li>探索影像作為溝通工具的多元可能性</li>
+        <li>拓展跨藝術與科學的思維視野</li>
+      </ul>
+    </div>
+    <div class="camp-card c5">
       <div class="camp-name">半導體科學營</div>
       <ul class="camp-items">
         <li>學習半導體基礎原理與製程概念</li>
@@ -812,15 +806,24 @@ footer span{color:var(--gold2);}
       </ul>
     </div>
   </div>
-  <!-- 📸 營隊活動照片 -->
-  <div class="photo-row cols-4" style="margin-top:28px;">
-    <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="長庚中西醫體驗營"><div class="photo-caption">長庚中西醫體驗營</div></div>
-    <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="北醫醫學營"><div class="photo-caption">北醫醫學營</div></div>
-    <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="陽明交通大學"><div class="photo-caption">陽明交通大學</div></div>
-    <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="半導體科學營"><div class="photo-caption">半導體科學營</div></div>
+
+  <!-- 北醫 & 師大 證書 -->
+  <div class="pdf-row cols-2" style="margin-top:28px;">
+    <div class="pdf-slot short">
+      <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E5%8C%97%E9%86%AB.pdf&embedded=true"></iframe>
+      <div class="pdf-caption">北醫醫學營 參加證書</div>
+      <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E5%8C%97%E9%86%AB.pdf" target="_blank">↗ 開啟原始檔案</a>
+    </div>
+    <div class="pdf-slot short">
+      <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E5%B8%AB%E5%A4%A7.pdf&embedded=true"></iframe>
+      <div class="pdf-caption">師大影像營 參加證書</div>
+      <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E5%B8%AB%E5%A4%A7.pdf" target="_blank">↗ 開啟原始檔案</a>
+    </div>
   </div>
 </div>
 </section>
+
+<!-- ══ 競賽成果 ══ -->
 <section id="award" class="section">
 <div class="section-inner">
   <div class="page-title">競賽成果</div>
@@ -865,11 +868,13 @@ footer span{color:var(--gold2);}
       </div>
     </div>
     <div class="quote-block" style="margin-top:16px;">面對未來的醫學道路，我深知診療現場同樣需要在高壓中保持冷靜、在複雜中理出脈絡，而十年琴聲早已為我準備齊全。</div>
-    <!-- 📸 大提琴照片 -->
-    <div class="photo-row cols-3" style="margin-top:16px;">
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="大提琴演出"><div class="photo-caption">台北市北區獨奏 第二名</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="上台表演"><div class="photo-caption">競賽演出</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="練習過程"><div class="photo-caption">平日練習</div></div>
+    <!-- 大提琴（維也納）證書 -->
+    <div class="pdf-row cols-1" style="margin-top:16px;">
+      <div class="pdf-slot short">
+        <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E7%B6%AD%E4%B9%9F%E7%B4%8D%20%E8%AD%89%E6%9B%B8.pdf&embedded=true"></iframe>
+        <div class="pdf-caption">大提琴競賽 獲獎證書</div>
+        <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E7%B6%AD%E4%B9%9F%E7%B4%8D%20%E8%AD%89%E6%9B%B8.pdf" target="_blank">↗ 開啟原始檔案</a>
+      </div>
     </div>
   </div>
 
@@ -896,12 +901,6 @@ footer span{color:var(--gold2);}
       </table>
     </div>
     <div class="quote-block" style="margin-top:16px;">細心、溝通、以人為本會是我未來在醫學道路上越走越長的基石。</div>
-    <!-- 📸 英語話劇照片 -->
-    <div class="photo-row cols-3" style="margin-top:16px;">
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="英語話劇演出"><div class="photo-caption">英語話劇演出</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="劇本投票四版草案"><div class="photo-caption">劇本草案投票</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="最佳劇本獎"><div class="photo-caption">最佳劇本獎</div></div>
-    </div>
   </div>
 
   <!-- 化奧 -->
@@ -951,13 +950,16 @@ footer span{color:var(--gold2);}
         </tbody>
       </table>
     </div>
-    <!-- 📸 VSEPR 分子模型照片 -->
-    <div class="photo-row cols-3" style="margin-top:16px;">
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="分子模型成品"><div class="photo-caption">分子模型成品</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="製作過程"><div class="photo-caption">製作過程</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="化奧榮譽獎"><div class="photo-caption">化奧初選 榮譽獎</div></div>
+    <!-- 化奧證書 -->
+    <div class="pdf-row cols-1" style="margin-top:16px;">
+      <div class="pdf-slot short">
+        <iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/annwang0601-coder/annwang0601-coder.github.io/main/%E5%8C%96%E5%A5%A7.pdf&embedded=true"></iframe>
+        <div class="pdf-caption">化學奧林匹亞初選 榮譽獎 證書</div>
+        <a class="pdf-link-btn" href="https://github.com/annwang0601-coder/annwang0601-coder.github.io/blob/main/%E5%8C%96%E5%A5%A7.pdf" target="_blank">↗ 開啟原始檔案</a>
+      </div>
     </div>
   </div>
+
   <div class="card">
     <div class="card-title">TRML 數學競賽——台北地區團體優良獎（高一・高二）</div>
     <div class="detail-body">
@@ -975,12 +977,6 @@ footer span{color:var(--gold2);}
     </div>
     <div class="detail-body" style="margin-top:16px;">
       <p><strong style="color:var(--navy);">學習收穫：</strong>從這次競賽，我學會了如何建議分配不同特長（如：計算快、思考深、穩定度高）的團員擔任合適的棒次，瞭解「管理」是讓團隊發揮 1+1&gt;2 的關鍵。</p>
-    </div>
-    <!-- 📸 TRML 競賽照片 -->
-    <div class="photo-row cols-3" style="margin-top:16px;">
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="TRML 競賽"><div class="photo-caption">TRML 比賽現場</div></div>
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="團隊討論"><div class="photo-caption">團隊討論中</div></div>
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="台北地區優良獎"><div class="photo-caption">台北地區優良獎</div></div>
     </div>
   </div>
 
@@ -1011,11 +1007,6 @@ footer span{color:var(--gold2);}
       </div>
     </div>
     <div class="quote-block" style="margin-top:16px;">獲得全球前 3% 的優異成績，讓我相信這不僅代表數學能力優異，更象徵具備極佳的邏輯推理與解題耐力。</div>
-    <!-- 📸 AMC12 成績單或備考照片 -->
-    <div class="photo-row cols-2" style="margin-top:16px;">
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="AMC12 成績"><div class="photo-caption">AMC12 全國前 3% 成績</div></div>
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="備考過程"><div class="photo-caption">備考筆記</div></div>
-    </div>
   </div>
 
   <!-- 英語 -->
@@ -1043,12 +1034,6 @@ footer span{color:var(--gold2);}
       <p><strong style="color:var(--navy);">學習歷程：</strong>從國小起便養成接觸英語聽力素材的習慣，包括收看英語 YouTube 頻道、收聽 Podcast，以及練習影子跟讀。每週至少閱讀 3 篇英語文章，並每天與 AI 對話半小時，從「準備好才說」變成一種習慣；透過觀看 TED 演講，在累積語感的同時接觸國際議題。</p>
       <p><strong style="color:var(--navy);">未來展望：</strong>閱讀英文學術文獻、參與國際交流計畫，用英語真正表達自己的想法與專業。英語能力對未來參與跨國醫學交流，將是最實用的基礎。</p>
     </div>
-    <!-- 📸 英語成績單照片 -->
-    <div class="photo-row cols-3" style="margin-top:16px;">
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="TOEIC 成績單"><div class="photo-caption">多益 880 分成績單</div></div>
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="全民英檢通過"><div class="photo-caption">全民英檢中高級通過</div></div>
-      <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="英語聽力滿分"><div class="photo-caption">高中英語聽力 A 級滿分</div></div>
-    </div>
   </div>
 
   <!-- 高中服裝組 -->
@@ -1074,12 +1059,6 @@ footer span{color:var(--gold2);}
     </div>
     <div class="detail-body" style="margin-top:16px;">
       <p><strong style="color:var(--navy);">挫折與責任感：</strong>比賽結果不如預期（僅得到燈光音效獎）時，學習與班級成員共同面對失落。堅持「善後」原則，無論成績好壞，均帶領團隊清理環境並妥善回收道具。</p>
-    </div>
-    <!-- 📸 服裝組製作照片 -->
-    <div class="photo-row cols-3" style="margin-top:16px;">
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="盔甲製作"><div class="photo-caption">盔甲上色與製作</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="彈力帶固定討論"><div class="photo-caption">討論彈力帶固定位置</div></div>
-      <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="背板繪製"><div class="photo-caption">背板繪製與梳妝台裝飾</div></div>
     </div>
   </div>
 
@@ -1115,13 +1094,6 @@ footer span{color:var(--gold2);}
     <div class="element-info" id="elInfo">點擊五行元素，了解相生相克關係</div>
   </div>
 
-  <!-- 📸 中醫筆記照片 -->
-  <div class="photo-row cols-3">
-    <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="中醫筆記"><div class="photo-caption">自製中醫基礎理論筆記</div></div>
-    <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="藥材辨識"><div class="photo-caption">十全大補湯藥材辨識</div></div>
-    <div class="photo-slot"><img src="YOUR_PHOTO_URL_HERE" alt="藥膳實作"><div class="photo-caption">藥膳炊飯實作</div></div>
-  </div>
-
 </div>
 </section>
 
@@ -1141,24 +1113,11 @@ footer span{color:var(--gold2);}
       <div class="ex-label">美術設計工作</div>
       <div class="ex-title">維多利亞時期視覺風格設計</div>
       <div class="ex-body">為精準呈現維多利亞時期的時空背景，利用放學時間自主研習電腦繪圖技巧，使用復古色調及降低明亮度以符合視覺沉浸感。與資訊組團隊協作交流，配合網頁調整內容，在美感與功能性之間取得平衡。</div>
-      <!-- 📸 設計稿、海報、電繪作品 -->
-      <div class="photo-row cols-3" style="margin-top:16px;">
-        <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="成果發表海報"><div class="photo-caption">成果發表海報設計</div></div>
-        <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="電繪插圖"><div class="photo-caption">電繪插圖作品</div></div>
-        <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="網頁視覺設計"><div class="photo-caption">網頁視覺設計</div></div>
-      </div>
     </div>
     <div class="ex-step">
       <div class="ex-label">活動發表工作</div>
       <div class="ex-title">互動遊戲設計與知識傳遞</div>
       <div class="ex-body">考量傳統理論容易使人產生距離感，特別設計互動遊戲環節（陰陽五行對應連連看、針灸體驗），將抽象五行轉化為淺顯易懂的遊戲規則，引發學弟妹的好奇心以達成知識傳遞。發放親自參與手工包裝的茶包作為獎勵，從選材介紹到封袋設計皆不假他人之手，將中醫藥食同源的概念應用於日常生活。</div>
-      <!-- 📸 攤位活動照片 -->
-      <div class="photo-row cols-4" style="margin-top:16px;">
-        <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="針灸體驗攤位"><div class="photo-caption">針灸體驗攤位</div></div>
-        <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="五行連連看遊戲"><div class="photo-caption">五行連連看遊戲</div></div>
-        <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="手工茶包"><div class="photo-caption">手工包裝茶包</div></div>
-        <div class="photo-slot short"><img src="YOUR_PHOTO_URL_HERE" alt="與參觀者互動"><div class="photo-caption">與學弟妹互動</div></div>
-      </div>
     </div>
     <div class="ex-step">
       <div class="ex-label">工作成果</div>
